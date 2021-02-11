@@ -1,8 +1,9 @@
 package xyz.tehbrian.restrictionhelper;
 
-import org.apache.commons.lang.NullArgumentException;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+
+import java.util.Objects;
 
 /**
  * The abstract class which all restrictions must extend.
@@ -15,21 +16,12 @@ public abstract class Restriction {
     protected final DebugLogger debugLogger;
 
     /**
-     * Private no-args constructor to enforce providing a {@link DebugLogger}.
-     */
-    private Restriction() {
-        throw new IllegalArgumentException("No DebugLogger provided.");
-    }
-
-    /**
      * Creates an instance of {@link Restriction}.
      *
      * @param debugLogger the debug logger to be used
      */
     public Restriction(final DebugLogger debugLogger) {
-        if (debugLogger == null) {
-            throw new NullArgumentException("DebugLogger provided is null.");
-        }
+        Objects.requireNonNull(debugLogger, "debugLogger cannot be null");
 
         this.debugLogger = debugLogger;
     }

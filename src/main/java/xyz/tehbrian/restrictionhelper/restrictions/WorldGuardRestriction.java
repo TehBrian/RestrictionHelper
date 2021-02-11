@@ -58,12 +58,15 @@ public final class WorldGuardRestriction extends Restriction {
                 flagToCheck = Flags.INTERACT;
                 break;
             }
+            case MODIFY: {
+                flagToCheck = Flags.BUILD;
+            }
             default:
                 throw new IllegalStateException("Unexpected value: " + actionType);
         }
 
         if (!query.testState(weLoc, localPlayer, flagToCheck)) {
-            debugLogger.logf("WG: FAILED - Player does not have %s flag.", flagToCheck.getName());
+            debugLogger.log("WG: FAILED - Player does not have %s flag.", flagToCheck.getName());
             return false;
         }
 

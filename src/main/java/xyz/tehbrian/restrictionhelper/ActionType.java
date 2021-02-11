@@ -2,8 +2,6 @@ package xyz.tehbrian.restrictionhelper;
 
 /**
  * Various types of actions that a player can perform.
- * This list is intentionally non-exhaustive to prevent
- * restriction abstraction from becoming too specific to one plugin.
  */
 public enum ActionType {
     /**
