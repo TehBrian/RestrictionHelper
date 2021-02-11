@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.logging.Logger;
 
 /**
- * The main class used for interacting with RestrictionHelper.
+ * The main class for use in interacting with RestrictionHelper.
  */
 public class RestrictionHelper {
 
@@ -19,14 +19,15 @@ public class RestrictionHelper {
      */
     private final List<Restriction> restrictions = new ArrayList<>();
     /**
-     * The {@link DebugLogger} constructed with the {@link Logger} provided by the plugin.
+     * The DebugLogger constructed with the Logger provided by the plugin.
      */
     private final DebugLogger debugLogger;
 
     /**
-     * Creates an instance of {@link RestrictionHelper}.
+     * Creates an instance of RestrictionHelper with a DebugLogger constructed
+     * with {@code logger}.
      *
-     * @param logger your plugin's logger. use {@link JavaPlugin#getLogger()} to get.
+     * @param logger your plugin's logger, use {@link JavaPlugin#getLogger()} to get
      */
     public RestrictionHelper(final Logger logger) {
         Objects.requireNonNull(logger, "logger cannot be null");
@@ -65,6 +66,8 @@ public class RestrictionHelper {
      * <p>
      * NOTE: Since RestrictionHelper is a shade-in dependency, this
      * list <b>is not</b> shared with other plugins.
+     *
+     * @return the list of registered restrictions
      */
     public List<Restriction> getRegisteredRestrictions() {
         return restrictions;
@@ -94,7 +97,7 @@ public class RestrictionHelper {
     }
 
     /**
-     * Gets the {@link DebugLogger} constructed with the {@link Logger} provided
+     * Gets the DebugLogger constructed with the Logger provided
      * to {@link RestrictionHelper#RestrictionHelper(Logger)}.
      *
      * @return the debug logger

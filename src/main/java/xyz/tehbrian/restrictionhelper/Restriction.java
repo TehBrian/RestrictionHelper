@@ -11,13 +11,11 @@ import java.util.Objects;
 public abstract class Restriction {
 
     /**
-     * The {@link DebugLogger} which will be used to log whether a check fails or passes, and why.
+     * The DebugLogger which will be used to log whether a check fails or passes, and why.
      */
     protected final DebugLogger debugLogger;
 
     /**
-     * Creates an instance of {@link Restriction}.
-     *
      * @param debugLogger the debug logger to be used
      */
     public Restriction(final DebugLogger debugLogger) {

@@ -11,22 +11,22 @@ import java.util.logging.Logger;
 public class DebugLogger {
 
     /**
-     * The {@link Logger} to be used when debugging is enabled.
+     * The Logger to be used when debugging is enabled.
      */
     private final Logger logger;
     /**
-     * Whether attempted debug logs will be logged via {@link Logger}.
+     * Whether attempted debug logs will be logged via {@link DebugLogger#logger}.
      */
     private boolean debug = false;
     /**
-     * The prefix to be inserted before the debug message.
+     * The prefix to be prepended to the debug message.
      */
     private String prefix;
 
     /**
-     * Construct a {@link DebugLogger} using {@code logger} as the internal {@link Logger}.
+     * Creates a DebugLogger using {@code logger} as the internal Logger.
      *
-     * @param logger the {@link Logger} to be used when debugging is enabled.
+     * @param logger the Logger to be used when debugging is enabled.
      */
     public DebugLogger(final Logger logger) {
         Objects.requireNonNull(logger, "logger cannot be null");
@@ -35,7 +35,7 @@ public class DebugLogger {
     }
 
     /**
-     * Get whether attempted debug logs will be logged via {@link Logger}.
+     * Get whether attempted debug logs will be logged via {@link DebugLogger#logger}.
      *
      * @return whether debug is enabled or not
      */
@@ -44,7 +44,7 @@ public class DebugLogger {
     }
 
     /**
-     * Set whether attempted debug logs will be logged via {@link Logger}.
+     * Set whether attempted debug logs will be logged via {@link DebugLogger#logger}.
      *
      * @param debug whether debug should be enabled or not
      */

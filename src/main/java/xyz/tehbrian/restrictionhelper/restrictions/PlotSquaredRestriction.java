@@ -15,10 +15,11 @@ public final class PlotSquaredRestriction extends Restriction {
     }
 
     public boolean check(final Player player, final org.bukkit.Location bukkitLoc, final ActionType actionType) {
+        Objects.requireNonNull(player);
         Objects.requireNonNull(bukkitLoc);
 
         com.plotsquared.core.location.Location psLoc = new com.plotsquared.core.location.Location(
-                bukkitLoc.getWorld().getName(),
+                Objects.requireNonNull(bukkitLoc.getWorld()).getName(),
                 bukkitLoc.getBlockX(),
                 bukkitLoc.getBlockY(),
                 bukkitLoc.getBlockZ());

@@ -18,14 +18,9 @@ public enum ActionType {
      */
     BREAK,
     /**
-     * Non-destructively interacting with a block. This includes
-     * things such as opening and closing doors, stepping on pressure plates,
+     * Non-destructively interacting with a block. This includes things
+     * such as opening and closing doors, stepping on pressure plates,
      * pressing a button, etc.
      */
     INTERACT,
-    /**
-     * Destructively interacting with a block. This includes rotating
-     * a block, changing the items of an inventory, etc.
-     */
-    MODIFY,
 }

@@ -23,13 +23,14 @@ public final class WorldGuardRestriction extends Restriction {
 
     @Override
     public boolean check(final Player player, final org.bukkit.Location bukkitLoc, final ActionType actionType) {
+        Objects.requireNonNull(player);
         Objects.requireNonNull(bukkitLoc);
 
         // Convert Bukkit objects to WorldEdit's proprietary objects
         com.sk89q.worldedit.util.Location weLoc = BukkitAdapter.adapt(bukkitLoc);
         LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
 
-        // WorldGuard API instance
+        // WorldGuard API
         WorldGuard worldGuard = WorldGuard.getInstance();
 
         // Player has permission to bypass
@@ -38,7 +39,6 @@ public final class WorldGuardRestriction extends Restriction {
             return true;
         }
 
-        // Check BUILD flag using query cache
         // Shamelessly copied from https://worldguard.enginehub.org/en/latest/developer/regions/protection-query/
         RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         RegionQuery query = container.createQuery();
@@ -57,9 +57,6 @@ public final class WorldGuardRestriction extends Restriction {
             case INTERACT: {
                 flagToCheck = Flags.INTERACT;
                 break;
-            }
-            case MODIFY: {
-                flagToCheck = Flags.BUILD;
             }
             default:
                 throw new IllegalStateException("Unexpected value: " + actionType);
