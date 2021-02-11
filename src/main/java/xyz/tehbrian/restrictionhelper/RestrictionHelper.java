@@ -33,6 +33,7 @@ public class RestrictionHelper {
         Objects.requireNonNull(logger, "logger cannot be null");
 
         this.debugLogger = new DebugLogger(logger);
+        this.debugLogger.setPrefix("ResHelper: ");
     }
 
     /**

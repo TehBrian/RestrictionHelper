@@ -43,6 +43,13 @@ public final class WorldGuardRestriction extends Restriction {
         RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         RegionQuery query = container.createQuery();
 
+        // Player has permission for everything, no need to check
+        // specific flags.
+        if (query.testState(weLoc, localPlayer, Flags.BUILD)) {
+            debugLogger.log("WG: PASSED - Player has BUILD flag.");
+            return true;
+        }
+
         StateFlag flagToCheck;
         switch (actionType) {
             case ALL:
