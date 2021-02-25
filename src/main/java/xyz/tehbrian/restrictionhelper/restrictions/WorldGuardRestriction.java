@@ -61,10 +61,9 @@ public final class WorldGuardRestriction extends Restriction {
             case BREAK:
                 flagToCheck = Flags.BLOCK_BREAK;
                 break;
-            case INTERACT: {
+            case INTERACT:
                 flagToCheck = Flags.INTERACT;
                 break;
-            }
             default:
                 throw new IllegalStateException("Unexpected value: " + actionType);
         }

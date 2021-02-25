@@ -46,7 +46,7 @@ public class RestrictionHelper {
      * @param restriction the restriction to register
      */
     public void registerRestriction(final Restriction restriction) {
-        restrictions.add(restriction);
+        this.restrictions.add(restriction);
     }
 
     /**
@@ -59,7 +59,7 @@ public class RestrictionHelper {
      * @param restriction the restriction to unregister
      */
     public void unregisterRestriction(final Restriction restriction) {
-        restrictions.remove(restriction);
+        this.restrictions.remove(restriction);
     }
 
     /**
@@ -71,7 +71,7 @@ public class RestrictionHelper {
      * @return the list of registered restrictions
      */
     public List<Restriction> getRegisteredRestrictions() {
-        return restrictions;
+        return this.restrictions;
     }
 
     /**
@@ -89,7 +89,7 @@ public class RestrictionHelper {
         // Iterate through all registered restrictions.
         // If any restriction returns false, return false immediately.
         // If all restrictions return true, return true.
-        for (Restriction restriction : restrictions) {
+        for (Restriction restriction : this.restrictions) {
             if (!restriction.check(player, loc, actionType)) {
                 return false;
             }
@@ -104,7 +104,7 @@ public class RestrictionHelper {
      * @return the debug logger
      */
     public DebugLogger getDebugLogger() {
-        return debugLogger;
+        return this.debugLogger;
     }
 }
 

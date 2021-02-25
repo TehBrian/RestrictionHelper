@@ -40,7 +40,7 @@ public class DebugLogger {
      * @return whether debug is enabled or not
      */
     public boolean isDebug() {
-        return debug;
+        return this.debug;
     }
 
     /**
@@ -58,7 +58,7 @@ public class DebugLogger {
      * @return the prefix
      */
     public String getPrefix() {
-        return prefix;
+        return this.prefix;
     }
 
     /**
@@ -66,7 +66,7 @@ public class DebugLogger {
      *
      * @param prefix the prefix
      */
-    public void setPrefix(String prefix) {
+    public void setPrefix(final String prefix) {
         this.prefix = prefix;
     }
 
@@ -76,11 +76,11 @@ public class DebugLogger {
      * @param message the message to log
      */
     public void log(final String message) {
-        if (!debug) {
+        if (!this.debug) {
             return;
         }
 
-        logger.info(prefix + message);
+        this.logger.info(this.prefix + message);
     }
 
     /**
@@ -91,6 +91,6 @@ public class DebugLogger {
      * @param formats formats to apply to the message
      */
     public void log(final String message, final Object... formats) {
-        log(String.format(message, formats));
+        this.log(String.format(message, formats));
     }
 }
