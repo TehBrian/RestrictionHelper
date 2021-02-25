@@ -6,7 +6,7 @@ A small shade-in dependency for plugin developers, to ease the pain of checking
 the building restrictions of various plugins.
 
 If you need any help, have any questions, or just want to chat, come join
-my [Discord Server](https://tehbrian.xyz/discord)!
+my [Discord Server](https://chat.tehbrian.xyz)!
 
 ## Documentation
 Check out the project's [GitHub Wiki](https://github.com/ItsTehBrian/RestrictionHelper/wiki).
