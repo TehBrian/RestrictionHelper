@@ -78,8 +78,9 @@ public class RestrictionHelper {
      * Checks whether {@code player} has sufficient permission to perform
      * {@code action} at {@code loc} according to all registered restrictions.
      *
-     * @param player the player
-     * @param loc    the location to checked
+     * @param player     the player
+     * @param loc        the location to checked
+     * @param actionType the type of action to check
      * @return true if the player has permission, false if not
      */
     public boolean checkRestrictions(final Player player, final Location loc, final ActionType actionType) {
