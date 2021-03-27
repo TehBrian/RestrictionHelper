@@ -1,23 +1,24 @@
-package xyz.tehbrian.restrictionhelper.restrictions;
+package xyz.tehbrian.restrictionhelper.bukkit.restrictions;
 
 import com.plotsquared.core.plot.Plot;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import xyz.tehbrian.restrictionhelper.ActionType;
-import xyz.tehbrian.restrictionhelper.DebugLogger;
-import xyz.tehbrian.restrictionhelper.Restriction;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.slf4j.Logger;
+import xyz.tehbrian.restrictionhelper.bukkit.BukkitRestriction;
+import xyz.tehbrian.restrictionhelper.core.ActionType;
+import xyz.tehbrian.restrictionhelper.core.RestrictionInfo;
 
 import java.util.Objects;
 
-public final class PlotSquaredRestriction extends Restriction {
+@RestrictionInfo(name = "PlotSquared", version = "5.13.3", main = "com.plotsquared.bukkit.BukkitMain")
+public final class PlotSquaredRestriction extends BukkitRestriction {
 
-    public PlotSquaredRestriction(final DebugLogger debugLogger) {
-        super(debugLogger);
+    public PlotSquaredRestriction(final @NonNull Logger logger) {
+        super(logger);
     }
 
-    public boolean check(final Player player, final org.bukkit.Location bukkitLoc, final ActionType actionType) {
-        Objects.requireNonNull(player);
-        Objects.requireNonNull(bukkitLoc);
-
+    public boolean check(final @NonNull Player player, final @NonNull Location bukkitLoc, final ActionType actionType) {
         com.plotsquared.core.location.Location psLoc = new com.plotsquared.core.location.Location(
                 Objects.requireNonNull(bukkitLoc.getWorld()).getName(),
                 bukkitLoc.getBlockX(),
@@ -35,20 +36,20 @@ public final class PlotSquaredRestriction extends Restriction {
             Plot plot = psLoc.getPlot();
 
             if (plot == null) {
-                debugLogger.log("PS: FAILED - Plot is null.");
+                this.logger.trace("PS: FAILED - Plot is null.");
                 return false;
             }
 
             if (plot.isAdded(player.getUniqueId())) {
-                debugLogger.log("PS: PASSED - Player is added to plot.");
+                this.logger.trace("PS: PASSED - Player is added to plot.");
                 return true;
             } else {
-                debugLogger.log("PS: FAILED - Player is not added to plot.");
+                this.logger.trace("PS: FAILED - Player is not added to plot.");
                 return false;
             }
         } else {
             // Location is not in a plot area.
-            debugLogger.log("PS: PASSED - Location isn't PlotArea or PlotRoad.");
+            this.logger.trace("PS: PASSED - Location isn't PlotArea or PlotRoad.");
             return true;
         }
     }
