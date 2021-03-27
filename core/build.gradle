@@ -10,37 +10,25 @@ buildscript {
 plugins {
     id 'java'
     id 'maven'
+    id 'org.checkerframework' version '0.5.17'
 }
 
 apply plugin: 'com.bmuschko.nexus'
+apply plugin: 'org.checkerframework'
 
-archivesBaseName = 'restrictionhelper'
-group 'xyz.tehbrian'
-version '0.1.0'
+archivesBaseName = 'core'
+group 'xyz.tehbrian.restrictionhelper'
+version '0.2.0'
 
 repositories {
     mavenCentral()
-
-    maven {
-        name = 'spigotmc-repo'
-        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
-    }
-
-    // Restrictions
-    maven { url = uri("https://maven.enginehub.org/repo/") } // WorldEdit and WorldGuard
-    maven { url = uri("https://mvn.intellectualsites.com/content/groups/public/") } // PlotSquared
 }
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
-    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
-
-    // Restrictions
-    compileOnly 'com.plotsquared:PlotSquared-Core:5.13.3' // PlotSquared Core API
-    compileOnly 'com.plotsquared:PlotSquared-Bukkit:5.13.3' // PlotSquared Bukkit API
-    compileOnly 'com.sk89q.worldguard:worldguard-bukkit:7.0.4' // WorldGuard API
+    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.14.1'
 }
 
 test {
@@ -49,7 +37,7 @@ test {
 
 modifyPom {
     project {
-        name 'restrictionhelper'
+        name 'core'
         description 'A small shade-in dependency for plugin developers, to ease the pain of checking the building restrictions of various plugins.'
         url 'https://github.com/ItsTehBrian/RestrictionHelper'
         inceptionYear '2021'
