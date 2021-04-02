@@ -18,6 +18,7 @@ public final class PlotSquaredRestriction extends BukkitRestriction {
         super(logger);
     }
 
+    @Override
     public boolean check(final @NonNull Player player, final @NonNull Location bukkitLoc, final ActionType actionType) {
         com.plotsquared.core.location.Location psLoc = new com.plotsquared.core.location.Location(
                 Objects.requireNonNull(bukkitLoc.getWorld()).getName(),
