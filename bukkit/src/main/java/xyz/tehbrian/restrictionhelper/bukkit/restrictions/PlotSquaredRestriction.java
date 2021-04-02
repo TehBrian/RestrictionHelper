@@ -11,7 +11,7 @@ import xyz.tehbrian.restrictionhelper.core.RestrictionInfo;
 
 import java.util.Objects;
 
-@RestrictionInfo(name = "PlotSquared", version = "5.13.3", main = "com.plotsquared.bukkit.BukkitMain")
+@RestrictionInfo(name = "PlotSquared", version = "5.13", main = "com.plotsquared.bukkit.BukkitMain")
 public final class PlotSquaredRestriction extends BukkitRestriction {
 
     public PlotSquaredRestriction(final @NonNull Logger logger) {
