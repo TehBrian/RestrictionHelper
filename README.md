@@ -20,4 +20,4 @@ This project uses gradle. To build, clone the repository and run
 
 ## Contributing
 Feel free to submit a pull-request or file an issue. Additionally, implementations 
-of restriction checkers for popular protection plugins are greatly appreciated!
+of restrictions for popular plugins are greatly appreciated!
