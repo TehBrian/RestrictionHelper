@@ -10,7 +10,7 @@ buildscript {
 plugins {
     id 'java'
     id 'maven'
-    id 'org.checkerframework' version '0.5.17'
+    id 'org.checkerframework' version '0.5.19'
 }
 
 apply plugin: 'com.bmuschko.nexus'
