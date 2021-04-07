@@ -28,7 +28,7 @@ dependencies {
 
     implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.14.1")
 
-    implementation("xyz.tehbrian.restrictionhelper:core:0.2.0")
+    implementation(project(":core"))
 
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
 
