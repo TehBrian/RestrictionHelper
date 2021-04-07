@@ -1,5 +1,5 @@
 plugins {
-    id("java")
+    `java-library`
     id("maven")
     id("org.checkerframework")
 }
