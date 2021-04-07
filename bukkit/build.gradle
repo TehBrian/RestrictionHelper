@@ -4,8 +4,6 @@ plugins {
     id 'org.checkerframework' version '0.5.19'
 }
 
-apply plugin: 'org.checkerframework'
-
 archivesBaseName = 'bukkit'
 group 'xyz.tehbrian.restrictionhelper'
 version '0.2.0'
