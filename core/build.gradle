@@ -4,7 +4,6 @@ plugins {
     id 'org.checkerframework' version '0.5.19'
 }
 
-archivesBaseName = 'core'
 group 'xyz.tehbrian.restrictionhelper'
 version '0.2.0'
 
