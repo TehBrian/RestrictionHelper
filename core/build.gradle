@@ -18,6 +18,11 @@ dependencies {
     compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.14.1'
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
 test {
     useJUnitPlatform()
 }
