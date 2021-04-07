@@ -16,12 +16,12 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":core"))
+    api(project(":core"))
 
-    compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
+    implementation("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
 
     // Restrictions
-    compileOnly("com.plotsquared:PlotSquared-Core:5.13.3") // PlotSquared Core API
-    compileOnly("com.plotsquared:PlotSquared-Bukkit:5.13.3") // PlotSquared Bukkit API
-    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.4") // WorldGuard API
+    implementation("com.plotsquared:PlotSquared-Core:5.13.3") // PlotSquared Core API
+    implementation("com.plotsquared:PlotSquared-Bukkit:5.13.3") // PlotSquared Bukkit API
+    implementation("com.sk89q.worldguard:worldguard-bukkit:7.0.4") // WorldGuard API
 }
