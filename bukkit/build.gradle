@@ -37,6 +37,11 @@ dependencies {
     compileOnly 'com.sk89q.worldguard:worldguard-bukkit:7.0.4' // WorldGuard API
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
 test {
     useJUnitPlatform()
 }
