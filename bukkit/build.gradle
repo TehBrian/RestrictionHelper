@@ -1,19 +1,9 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
-    }
-}
-
 plugins {
     id 'java'
     id 'maven'
     id 'org.checkerframework' version '0.5.19'
 }
 
-apply plugin: 'com.bmuschko.nexus'
 apply plugin: 'org.checkerframework'
 
 archivesBaseName = 'bukkit'
@@ -52,47 +42,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-modifyPom {
-    project {
-        name 'bukkit'
-        description 'A small shade-in dependency for plugin developers, to ease the pain of checking the building restrictions of various plugins.'
-        url 'https://github.com/ItsTehBrian/RestrictionHelper'
-        inceptionYear '2021'
-
-        scm {
-            url 'https://github.com/ItsTehBrian/RestrictionHelper'
-            connection 'scm:https://github.com/ItsTehBrian/RestrictionHelper.git'
-            developerConnection 'scm:git://github.com/ItsTehBrian/RestrictionHelper.git'
-        }
-
-        licenses {
-            license {
-                name 'MIT License'
-                url 'http://www.opensource.org/licenses/mit-license.php'
-                distribution 'repo'
-            }
-        }
-
-        developers {
-            developer {
-                id 'tehbrian'
-                name 'TehBrian'
-                email 'tehbrian@outlook.com'
-            }
-        }
-    }
-}
-
-extraArchive {
-    sources = true
-    tests = true
-    javadoc = true
-}
-
-nexus {
-    sign = true
-    repositoryUrl = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
-    snapshotRepositoryUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
 }
