@@ -1,6 +1,6 @@
 plugins {
     `java-library`
-    id("maven")
+    `maven-publish`
     id("org.checkerframework")
 }
 
