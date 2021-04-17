@@ -1,4 +1,4 @@
 /**
- * A bukkit implementation of RestrictionHelper.
+ * A Bukkit implementation of RestrictionHelper.
  */
 package xyz.tehbrian.restrictionhelper.bukkit;
