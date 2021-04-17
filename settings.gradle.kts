@@ -1,3 +1,4 @@
 rootProject.name = "restrictionhelper"
 
-include(":core", ":bukkit")
+include(":restrictionhelper-core")
+include(":restrictionhelper-bukkit")
