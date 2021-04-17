@@ -1,8 +1,8 @@
 # RestrictionHelper
 ![Maven Central](https://img.shields.io/maven-central/v/xyz.tehbrian/restrictionhelper)
-![GitHub](https://img.shields.io/github/license/ItsTehBrian/RestrictionHelper)
+![License](https://img.shields.io/github/license/ItsTehBrian/RestrictionHelper)
 
-A small shade-in dependency for plugin developers, to ease the pain of checking 
+A small shade-in dependency for plugin developers, to ease the pain of checking
 the building restrictions of various plugins.
 
 If you need any help, have any questions, or just want to chat, come join
@@ -19,5 +19,5 @@ This project uses gradle. To build, clone the repository and run
 `build/libs`.
 
 ## Contributing
-Feel free to submit a pull-request or file an issue. Additionally, implementations 
+Feel free to submit a pull-request or file an issue. Additionally, implementations
 of restrictions for popular plugins are greatly appreciated!
