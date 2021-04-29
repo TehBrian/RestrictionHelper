@@ -29,7 +29,7 @@ public abstract class RestrictionLoader<P, L, R extends Restriction<P, L>, H ext
     /**
      * The {@code Restriction}s to maybe be registered.
      */
-    protected final List<Class<R>> possibleRestrictions;
+    protected final List<Class<? extends R>> possibleRestrictions;
 
     /**
      * @param logger               the {@code Logger} used to log whether a check fails or
@@ -40,7 +40,7 @@ public abstract class RestrictionLoader<P, L, R extends Restriction<P, L>, H ext
     public RestrictionLoader(
             final @NonNull Logger logger,
             final @NonNull List<T> plugins,
-            final @NonNull List<Class<R>> possibleRestrictions) {
+            final @NonNull List<Class<? extends R>> possibleRestrictions) {
         this.logger = logger;
         this.plugins = plugins;
         this.possibleRestrictions = possibleRestrictions;
