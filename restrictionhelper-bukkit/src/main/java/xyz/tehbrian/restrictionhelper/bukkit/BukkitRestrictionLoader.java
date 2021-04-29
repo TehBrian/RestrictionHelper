@@ -30,7 +30,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
     public BukkitRestrictionLoader(
             final @NonNull Logger logger,
             final @NonNull List<Plugin> plugins,
-            final @NonNull List<Class<BukkitRestriction>> possibleRestrictions) {
+            final @NonNull List<Class<? extends BukkitRestriction>> possibleRestrictions) {
         super(logger, plugins, possibleRestrictions);
     }
 
@@ -44,7 +44,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
      */
     public void load(final @NonNull BukkitRestrictionHelper restrictionHelper) {
         for (Plugin plugin : plugins) {
-            for (Class<BukkitRestriction> restrictionClass : possibleRestrictions) {
+            for (Class<? extends BukkitRestriction> restrictionClass : possibleRestrictions) {
                 RestrictionInfo info = restrictionClass.getAnnotation(RestrictionInfo.class);
                 if (info == null) {
                     return;
@@ -66,7 +66,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
                         description.getName(),
                         description.getVersion());
 
-                Constructor<BukkitRestriction> constructor;
+                Constructor<? extends BukkitRestriction> constructor;
                 try {
                     constructor = restrictionClass.getConstructor(Logger.class);
                 } catch (NoSuchMethodException e) {
