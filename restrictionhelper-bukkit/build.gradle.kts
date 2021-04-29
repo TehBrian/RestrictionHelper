@@ -19,7 +19,7 @@ dependencies {
     implementation("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
 
     // Restrictions
-    implementation("com.plotsquared:PlotSquared-Core:5.13.11") // PlotSquared Core API
-    implementation("com.plotsquared:PlotSquared-Bukkit:5.13.11") // PlotSquared Bukkit API
-    implementation("com.sk89q.worldguard:worldguard-bukkit:7.0.4") // WorldGuard API
+    compileOnly("com.plotsquared:PlotSquared-Core:5.13.11") // PlotSquared Core API
+    compileOnly("com.plotsquared:PlotSquared-Bukkit:5.13.11") // PlotSquared Bukkit API
+    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.4") // WorldGuard API
 }
