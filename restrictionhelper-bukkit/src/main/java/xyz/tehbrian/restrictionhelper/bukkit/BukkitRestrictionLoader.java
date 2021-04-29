@@ -50,7 +50,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
         List<String> possibleRestrictionNames = new ArrayList<>();
         possibleRestrictions.forEach(r -> possibleRestrictionNames.add(r.getSimpleName()));
 
-        logger.info("Attempting to find applicable restrictions for plugins {} from restrictions {}.",
+        logger.info("Finding applicable restrictions for plugins {} from restrictions {}.",
                 String.join(", ", pluginNames),
                 String.join(", ", possibleRestrictionNames));
 
@@ -106,7 +106,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
 
                 restrictionHelper.registerRestriction(restriction);
 
-                this.logger.info("The restriction for {} was registered successfully!",
+                this.logger.info("Registered the restriction for {} successfully!",
                         description.getName());
             }
         }
