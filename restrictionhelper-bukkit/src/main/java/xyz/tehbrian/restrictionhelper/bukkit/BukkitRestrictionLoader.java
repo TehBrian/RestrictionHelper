@@ -47,18 +47,18 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
             for (Class<? extends BukkitRestriction> restrictionClass : possibleRestrictions) {
                 RestrictionInfo info = restrictionClass.getAnnotation(RestrictionInfo.class);
                 if (info == null) {
-                    return;
+                    continue;
                 }
 
                 PluginDescriptionFile description = plugin.getDescription();
-                if (description.getName().equals(info.name())) {
-                    return;
+                if (!description.getName().equals(info.name())) {
+                    continue;
                 }
                 if (!description.getMain().equals(info.main())) {
-                    return;
+                    continue;
                 }
                 if (!description.getVersion().startsWith(info.version())) { // TODO make this work good.
-                    return;
+                    continue;
                 }
 
                 this.logger.info("Found applicable Restriction {} for plugin {} version {}. Attempting to register the Restriction..",
@@ -71,7 +71,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
                     constructor = restrictionClass.getConstructor(Logger.class);
                 } catch (NoSuchMethodException e) {
                     this.logger.error("Failed to register the Restriction because it didn't have the proper constructor!", e);
-                    return;
+                    continue;
                 }
 
                 BukkitRestriction restriction;
@@ -79,7 +79,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
                     restriction = constructor.newInstance(this.logger);
                 } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
                     this.logger.error("Failed to register the Restriction because there was an error when trying to instantiate it!", e);
-                    return;
+                    continue;
                 }
 
                 restrictionHelper.registerRestriction(restriction);
