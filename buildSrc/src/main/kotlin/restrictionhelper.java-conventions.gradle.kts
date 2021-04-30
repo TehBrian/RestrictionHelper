@@ -1,31 +1,49 @@
 plugins {
     `java-library`
-    `maven-publish`
     id("org.checkerframework")
+    id("net.kyori.indra")
+    id("net.kyori.indra.checkstyle")
+    id("net.kyori.indra.publishing")
 }
 
 group = "xyz.tehbrian.restrictionhelper"
 version = "0.2.0"
+description = "A small shade-in dependency for plugin developers, to ease the pain of checking the building restrictions of various plugins."
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // JUnit 5
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
-
     implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.14.1")
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-}
+indra {
+    javaVersions {
+        target(11)
+        testWith(11, 16)
+    }
 
-tasks {
-    test {
-        useJUnitPlatform()
+    mitLicense()
+
+    configurePublications{
+        pom {
+            url.set("https://github.com/ItsTehBrian/RestrictionHelper")
+
+            developers {
+                developer {
+                    id.set("TehBrian")
+                    name.set("Brian Packard")
+                    url.set("https://tehbrian.xyz")
+                    email.set("tehbrian(at)outlook(dot)com")
+                }
+            }
+
+            scm {
+                connection.set("scm:git:git://github.com/ItsTehBrian/RestrictionHelper.git")
+                developerConnection.set("scm:git:ssh://github.com/ItsTehBrian/RestrictionHelper.git")
+                url.set("https://github.com/ItsTehBrian/RestrictionHelper.git")
+            }
+        }
     }
 }
