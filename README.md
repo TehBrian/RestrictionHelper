@@ -15,8 +15,8 @@ If you're new and just want to find out what the heck is going on, read
 
 ## Building
 This project uses gradle. To build, clone the repository and run
-`./gradlew clean build` in the project directory. The built jar should be in
-`build/libs`.
+`./gradlew clean build` in the project directory. The built jar for each
+subproject will be in `build/libs`.
 
 ## Contributing
 Feel free to submit a pull-request or file an issue. Additionally, implementations
