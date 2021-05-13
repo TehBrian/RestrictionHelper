@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.14.1")
+    implementation("org.slf4j:slf4j-api:2.0.0-alpha1")
 }
 
 indra {
