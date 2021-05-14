@@ -1,6 +1,7 @@
 # RestrictionHelper
 ![Maven Central](https://img.shields.io/maven-central/v/xyz.tehbrian/restrictionhelper)
 ![License](https://img.shields.io/github/license/ItsTehBrian/RestrictionHelper)
+![Discord](https://img.shields.io/discord/791861916314239006)
 
 A small shade-in dependency for plugin developers, to ease the pain of checking
 the building restrictions of various plugins.
