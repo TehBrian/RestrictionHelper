@@ -1,5 +1,5 @@
 # RestrictionHelper
-![Maven Central](https://img.shields.io/maven-central/v/xyz.tehbrian/restrictionhelper)
+![Maven Central](https://img.shields.io/maven-central/v/xyz.tehbrian.restrictionhelper/restrictionhelper-core)
 ![License](https://img.shields.io/github/license/ItsTehBrian/RestrictionHelper)
 ![Discord](https://img.shields.io/discord/791861916314239006)
 
