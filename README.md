@@ -10,15 +10,17 @@ If you need any help, have any questions, or just want to chat, come join
 my [Discord Server](https://chat.tehbrian.xyz)!
 
 ## Documentation
-Check out the project's [GitHub Wiki](https://github.com/ItsTehBrian/RestrictionHelper/wiki).
-If you're new and just want to find out what the heck is going on, read
-[Getting Started](https://github.com/ItsTehBrian/RestrictionHelper/wiki/Getting-Started).
+Check out the project's [GitHub Wiki](wiki). If you're new and just want to find
+out what the heck is going on, read [Getting Started](getting started).
+
+[wiki]: https://github.com/ItsTehBrian/RestrictionHelper/wiki
+
+[getting started]: https://github.com/ItsTehBrian/RestrictionHelper/wiki/Getting-Started
 
 ## Building
-This project uses gradle. To build, clone the repository and run
-`./gradlew clean build` in the project directory. The built jar for each
-subproject will be in `build/libs`.
+This project uses Gradle. To build, run `./gradlew build` in the main project
+directory. The built jar for each subproject can be found in `build/libs`.
 
 ## Contributing
-Feel free to submit a pull-request or file an issue. Additionally, implementations
-of restrictions for popular plugins are greatly appreciated!
+Feel free to submit a pull-request or file an issue. Additionally,
+implementations of restrictions for popular plugins are greatly appreciated!
