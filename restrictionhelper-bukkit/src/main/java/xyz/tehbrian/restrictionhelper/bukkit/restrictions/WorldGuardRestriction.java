@@ -54,23 +54,12 @@ public final class WorldGuardRestriction extends BukkitRestriction {
             return true;
         }
 
-        StateFlag flagToCheck;
-        switch (actionType) {
-            case ALL:
-                flagToCheck = Flags.BUILD;
-                break;
-            case PLACE:
-                flagToCheck = Flags.BLOCK_PLACE;
-                break;
-            case BREAK:
-                flagToCheck = Flags.BLOCK_BREAK;
-                break;
-            case INTERACT:
-                flagToCheck = Flags.INTERACT;
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + actionType);
-        }
+        StateFlag flagToCheck = switch (actionType) {
+            case ALL -> Flags.BUILD;
+            case PLACE -> Flags.BLOCK_PLACE;
+            case BREAK -> Flags.BLOCK_BREAK;
+            case INTERACT -> Flags.INTERACT;
+        };
 
         if (!query.testState(weLoc, localPlayer, flagToCheck)) {
             this.logger.trace("WG: FAILED - Player does not have {} flag.", flagToCheck.getName());
