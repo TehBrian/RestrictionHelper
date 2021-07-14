@@ -19,4 +19,5 @@ public abstract class BukkitRestriction extends Restriction<Player, Location> {
     public BukkitRestriction(final @NonNull Logger logger) {
         super(logger);
     }
+
 }

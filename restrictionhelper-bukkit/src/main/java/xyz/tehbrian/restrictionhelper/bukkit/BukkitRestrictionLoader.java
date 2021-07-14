@@ -31,7 +31,8 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
     public BukkitRestrictionLoader(
             final @NonNull Logger logger,
             final @NonNull List<Plugin> plugins,
-            final @NonNull List<Class<? extends BukkitRestriction>> possibleRestrictions) {
+            final @NonNull List<Class<? extends BukkitRestriction>> possibleRestrictions
+    ) {
         super(logger, plugins, possibleRestrictions);
     }
 
@@ -50,9 +51,11 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
         List<String> possibleRestrictionNames = new ArrayList<>();
         possibleRestrictions.forEach(r -> possibleRestrictionNames.add(r.getSimpleName()));
 
-        logger.info("Finding applicable restrictions for plugins {} from restrictions {}.",
+        logger.info(
+                "Finding applicable restrictions for plugins {} from restrictions {}.",
                 String.join(", ", pluginNames),
-                String.join(", ", possibleRestrictionNames));
+                String.join(", ", possibleRestrictionNames)
+        );
 
         for (Plugin plugin : plugins) {
             logger.debug("Beginning restriction-check loop for plugin {}.", plugin.getName());
@@ -83,10 +86,12 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
                     continue;
                 }
 
-                this.logger.info("Found applicable restriction {} for plugin {} version {}. Attempting to register the restriction..",
+                this.logger.info(
+                        "Found applicable restriction {} for plugin {} version {}. Attempting to register the restriction..",
                         restrictionClass.getCanonicalName(),
                         description.getName(),
-                        description.getVersion());
+                        description.getVersion()
+                );
 
                 Constructor<? extends BukkitRestriction> constructor;
                 try {
@@ -106,9 +111,12 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
 
                 restrictionHelper.registerRestriction(restriction);
 
-                this.logger.info("Registered the restriction for {} successfully!",
-                        description.getName());
+                this.logger.info(
+                        "Registered the restriction for {} successfully!",
+                        description.getName()
+                );
             }
         }
     }
+
 }

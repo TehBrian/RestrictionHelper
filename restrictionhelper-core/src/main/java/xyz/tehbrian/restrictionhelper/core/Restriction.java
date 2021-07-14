@@ -35,4 +35,5 @@ public abstract class Restriction<P, L> {
      * @return true if the player has permission, false if not
      */
     public abstract boolean check(@NonNull P player, @NonNull L location, ActionType actionType);
+
 }

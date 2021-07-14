@@ -80,4 +80,5 @@ public final class WorldGuardRestriction extends BukkitRestriction {
         this.logger.trace("WG: PASSED - Default return value.");
         return true;
     }
+
 }

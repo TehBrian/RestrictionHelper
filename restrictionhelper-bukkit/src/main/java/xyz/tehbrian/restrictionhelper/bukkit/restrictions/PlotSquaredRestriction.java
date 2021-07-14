@@ -24,7 +24,8 @@ public final class PlotSquaredRestriction extends BukkitRestriction {
                 Objects.requireNonNull(bukkitLoc.getWorld()).getName(),
                 bukkitLoc.getBlockX(),
                 bukkitLoc.getBlockY(),
-                bukkitLoc.getBlockZ());
+                bukkitLoc.getBlockZ()
+        );
 
         if (psLoc.isPlotArea() || psLoc.isPlotRoad()) {
             // Location is in a plot area.
@@ -54,4 +55,5 @@ public final class PlotSquaredRestriction extends BukkitRestriction {
             return true;
         }
     }
+
 }

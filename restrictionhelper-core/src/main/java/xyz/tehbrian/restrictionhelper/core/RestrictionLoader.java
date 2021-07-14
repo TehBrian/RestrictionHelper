@@ -40,7 +40,8 @@ public abstract class RestrictionLoader<P, L, R extends Restriction<P, L>, H ext
     public RestrictionLoader(
             final @NonNull Logger logger,
             final @NonNull List<T> plugins,
-            final @NonNull List<Class<? extends R>> possibleRestrictions) {
+            final @NonNull List<Class<? extends R>> possibleRestrictions
+    ) {
         this.logger = logger;
         this.plugins = plugins;
         this.possibleRestrictions = possibleRestrictions;
@@ -55,4 +56,5 @@ public abstract class RestrictionLoader<P, L, R extends Restriction<P, L>, H ext
      * @param restrictionHelper the {@code RestrictionHelper} instance
      */
     public abstract void load(@NonNull H restrictionHelper);
+
 }

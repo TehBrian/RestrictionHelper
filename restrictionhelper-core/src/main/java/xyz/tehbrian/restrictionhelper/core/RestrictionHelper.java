@@ -78,4 +78,5 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
         }
         return true;
     }
+
 }

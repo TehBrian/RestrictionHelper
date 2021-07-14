@@ -9,4 +9,5 @@ import xyz.tehbrian.restrictionhelper.core.RestrictionHelper;
  * against.
  */
 public class BukkitRestrictionHelper extends RestrictionHelper<Player, Location, BukkitRestriction> {
+
 }
