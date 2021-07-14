@@ -10,8 +10,8 @@ If you need any help, have any questions, or just want to chat, come join
 my [Discord Server](https://chat.tehbrian.xyz)!
 
 ## Documentation
-Check out the project's [GitHub Wiki](wiki). If you're new and just want to find
-out what the heck is going on, read [Getting Started](gs).
+Check out the project's [GitHub Wiki][wiki]. If you're new and just want to find
+out what the heck is going on, read [Getting Started][gs].
 
 [wiki]: https://github.com/ItsTehBrian/RestrictionHelper/wiki
 
