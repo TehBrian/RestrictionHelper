@@ -27,21 +27,20 @@ indra {
 
     configurePublications{
         pom {
-            url.set("https://github.com/ItsTehBrian/RestrictionHelper")
+            url.set("https://github.com/TehBrian/RestrictionHelper")
 
             developers {
                 developer {
-                    id.set("TehBrian")
-                    name.set("Brian Packard")
+                    name.set("TehBrian")
                     url.set("https://tehbrian.xyz")
-                    email.set("tehbrian(at)outlook(dot)com")
+                    email.set("tehbrian@protonmail.com")
                 }
             }
 
             scm {
-                connection.set("scm:git:git://github.com/ItsTehBrian/RestrictionHelper.git")
-                developerConnection.set("scm:git:ssh://github.com/ItsTehBrian/RestrictionHelper.git")
-                url.set("https://github.com/ItsTehBrian/RestrictionHelper.git")
+                connection.set("scm:git:git://github.com/TehBrian/RestrictionHelper.git")
+                developerConnection.set("scm:git:ssh://github.com/TehBrian/RestrictionHelper.git")
+                url.set("https://github.com/TehBrian/RestrictionHelper.git")
             }
         }
     }
