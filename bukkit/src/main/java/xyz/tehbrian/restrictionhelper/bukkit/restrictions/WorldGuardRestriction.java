@@ -31,11 +31,11 @@ public final class WorldGuardRestriction extends BukkitRestriction {
         Objects.requireNonNull(bukkitLoc);
 
         // Convert Bukkit objects to WorldEdit's proprietary objects
-        com.sk89q.worldedit.util.Location weLoc = BukkitAdapter.adapt(bukkitLoc);
-        LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
+        final com.sk89q.worldedit.util.Location weLoc = BukkitAdapter.adapt(bukkitLoc);
+        final LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
 
         // WorldGuard API
-        WorldGuard worldGuard = WorldGuard.getInstance();
+        final WorldGuard worldGuard = WorldGuard.getInstance();
 
         // Player has permission to bypass
         if (worldGuard.getPlatform().getSessionManager().hasBypass(localPlayer, localPlayer.getWorld())) {
@@ -44,8 +44,8 @@ public final class WorldGuardRestriction extends BukkitRestriction {
         }
 
         // Shamelessly copied from https://worldguard.enginehub.org/en/latest/developer/regions/protection-query/
-        RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
-        RegionQuery query = container.createQuery();
+        final RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+        final RegionQuery query = container.createQuery();
 
         // Player has permission for everything, no need to check
         // specific flags.
@@ -54,7 +54,7 @@ public final class WorldGuardRestriction extends BukkitRestriction {
             return true;
         }
 
-        StateFlag flagToCheck = switch (actionType) {
+        final StateFlag flagToCheck = switch (actionType) {
             case ALL -> Flags.BUILD;
             case PLACE -> Flags.BLOCK_PLACE;
             case BREAK -> Flags.BLOCK_BREAK;

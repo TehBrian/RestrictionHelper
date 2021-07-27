@@ -45,10 +45,10 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
      * @param restrictionHelper the {@code RestrictionHelper} instance
      */
     public void load(final @NonNull BukkitRestrictionHelper restrictionHelper) {
-        List<String> pluginNames = new ArrayList<>();
+        final List<String> pluginNames = new ArrayList<>();
         plugins.forEach(p -> pluginNames.add(p.getName()));
 
-        List<String> possibleRestrictionNames = new ArrayList<>();
+        final List<String> possibleRestrictionNames = new ArrayList<>();
         possibleRestrictions.forEach(r -> possibleRestrictionNames.add(r.getSimpleName()));
 
         logger.info(
@@ -57,19 +57,19 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
                 String.join(", ", possibleRestrictionNames)
         );
 
-        for (Plugin plugin : plugins) {
+        for (final Plugin plugin : plugins) {
             logger.debug("Beginning restriction-check loop for plugin {}.", plugin.getName());
 
-            for (Class<? extends BukkitRestriction> restrictionClass : possibleRestrictions) {
+            for (final Class<? extends BukkitRestriction> restrictionClass : possibleRestrictions) {
                 logger.debug("Checking restriction {} for plugin {}.", restrictionClass.getSimpleName(), plugin.getName());
 
-                RestrictionInfo info = restrictionClass.getAnnotation(RestrictionInfo.class);
+                final RestrictionInfo info = restrictionClass.getAnnotation(RestrictionInfo.class);
                 if (info == null) {
                     logger.debug("Failed because the class was not annotated with RestrictionInfo.");
                     continue;
                 }
 
-                PluginDescriptionFile description = plugin.getDescription();
+                final PluginDescriptionFile description = plugin.getDescription();
                 if (!description.getName().equals(info.name())) {
                     logger.debug("Failed because the plugin's name did not match the RestrictionInfo's specified name.");
                     logger.debug("Expected: {} Actual: {}", info.name(), description.getName());
@@ -93,18 +93,18 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
                         description.getVersion()
                 );
 
-                Constructor<? extends BukkitRestriction> constructor;
+                final Constructor<? extends BukkitRestriction> constructor;
                 try {
                     constructor = restrictionClass.getConstructor(Logger.class);
-                } catch (NoSuchMethodException e) {
+                } catch (final NoSuchMethodException e) {
                     this.logger.error("Failed to register the restriction because it didn't have the proper constructor!", e);
                     continue;
                 }
 
-                BukkitRestriction restriction;
+                final BukkitRestriction restriction;
                 try {
                     restriction = constructor.newInstance(this.logger);
-                } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                } catch (final InstantiationException | IllegalAccessException | InvocationTargetException e) {
                     this.logger.error("Failed to register the restriction because there was an error when trying to instantiate it!", e);
                     continue;
                 }

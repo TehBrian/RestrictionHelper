@@ -71,7 +71,7 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
         // Iterate through all registered restrictions.
         // If any restriction returns false, return false immediately.
         // If all restrictions return true, return true.
-        for (R restriction : this.restrictions) {
+        for (final R restriction : this.restrictions) {
             if (!restriction.check(player, location, actionType)) {
                 return false;
             }
