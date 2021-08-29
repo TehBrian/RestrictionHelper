@@ -1,6 +1,6 @@
 rootProject.name = "restrictionhelper"
 
-projects("core", "bukkit")
+projects("core", "spigot")
 
 fun projects(vararg names: String) {
     include(*names)

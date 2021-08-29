@@ -1,18 +1,18 @@
-package xyz.tehbrian.restrictionhelper.bukkit.restrictions;
+package xyz.tehbrian.restrictionhelper.spigot.restrictions;
 
 import com.plotsquared.core.plot.Plot;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
-import xyz.tehbrian.restrictionhelper.bukkit.BukkitRestriction;
+import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 import xyz.tehbrian.restrictionhelper.core.ActionType;
 import xyz.tehbrian.restrictionhelper.core.RestrictionInfo;
 
 import java.util.Objects;
 
 @RestrictionInfo(name = "PlotSquared", version = "5.13", main = "com.plotsquared.bukkit.BukkitMain")
-public final class PlotSquaredRestriction extends BukkitRestriction {
+public final class PlotSquaredRestriction extends SpigotRestriction {
 
     public PlotSquaredRestriction(final @NonNull Logger logger) {
         super(logger);

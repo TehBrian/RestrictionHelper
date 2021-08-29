@@ -1,4 +1,4 @@
-package xyz.tehbrian.restrictionhelper.bukkit;
+package xyz.tehbrian.restrictionhelper.spigot;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -20,7 +20,7 @@ import java.util.List;
  * A utility class which registers {@link Restriction}s into a
  * {@link RestrictionHelper} instance according to {@link #plugins}.
  */
-public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location, BukkitRestriction, BukkitRestrictionHelper, Plugin> {
+public class SpigotRestrictionLoader extends RestrictionLoader<Player, Location, SpigotRestriction, SpigotRestrictionHelper, Plugin> {
 
     /**
      * @param logger               the {@code Logger} used to log whether a check fails or
@@ -28,10 +28,10 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
      * @param plugins              the plugins to check
      * @param possibleRestrictions the {@code Restriction}s to maybe be registered
      */
-    public BukkitRestrictionLoader(
+    public SpigotRestrictionLoader(
             final @NonNull Logger logger,
             final @NonNull List<Plugin> plugins,
-            final @NonNull List<Class<? extends BukkitRestriction>> possibleRestrictions
+            final @NonNull List<Class<? extends SpigotRestriction>> possibleRestrictions
     ) {
         super(logger, plugins, possibleRestrictions);
     }
@@ -44,7 +44,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
      *
      * @param restrictionHelper the {@code RestrictionHelper} instance
      */
-    public void load(final @NonNull BukkitRestrictionHelper restrictionHelper) {
+    public void load(final @NonNull SpigotRestrictionHelper restrictionHelper) {
         final List<String> pluginNames = new ArrayList<>();
         plugins.forEach(p -> pluginNames.add(p.getName()));
 
@@ -60,7 +60,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
         for (final Plugin plugin : plugins) {
             logger.debug("Beginning restriction-check loop for plugin {}.", plugin.getName());
 
-            for (final Class<? extends BukkitRestriction> restrictionClass : possibleRestrictions) {
+            for (final Class<? extends SpigotRestriction> restrictionClass : possibleRestrictions) {
                 logger.debug("Checking restriction {} for plugin {}.", restrictionClass.getSimpleName(), plugin.getName());
 
                 final RestrictionInfo info = restrictionClass.getAnnotation(RestrictionInfo.class);
@@ -93,7 +93,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
                         description.getVersion()
                 );
 
-                final Constructor<? extends BukkitRestriction> constructor;
+                final Constructor<? extends SpigotRestriction> constructor;
                 try {
                     constructor = restrictionClass.getConstructor(Logger.class);
                 } catch (final NoSuchMethodException e) {
@@ -101,7 +101,7 @@ public class BukkitRestrictionLoader extends RestrictionLoader<Player, Location,
                     continue;
                 }
 
-                final BukkitRestriction restriction;
+                final SpigotRestriction restriction;
                 try {
                     restriction = constructor.newInstance(this.logger);
                 } catch (final InstantiationException | IllegalAccessException | InvocationTargetException e) {

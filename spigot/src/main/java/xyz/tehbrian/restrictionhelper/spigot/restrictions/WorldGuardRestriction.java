@@ -1,4 +1,4 @@
-package xyz.tehbrian.restrictionhelper.bukkit.restrictions;
+package xyz.tehbrian.restrictionhelper.spigot.restrictions;
 
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldguard.LocalPlayer;
@@ -12,14 +12,14 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
-import xyz.tehbrian.restrictionhelper.bukkit.BukkitRestriction;
+import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 import xyz.tehbrian.restrictionhelper.core.ActionType;
 import xyz.tehbrian.restrictionhelper.core.RestrictionInfo;
 
 import java.util.Objects;
 
 @RestrictionInfo(name = "WorldGuard", version = "7.0.4", main = "com.sk89q.worldguard.bukkit.WorldGuardPlugin")
-public final class WorldGuardRestriction extends BukkitRestriction {
+public final class WorldGuardRestriction extends SpigotRestriction {
 
     public WorldGuardRestriction(final @NonNull Logger logger) {
         super(logger);

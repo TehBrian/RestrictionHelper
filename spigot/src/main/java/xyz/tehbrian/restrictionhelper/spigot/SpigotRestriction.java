@@ -1,4 +1,4 @@
-package xyz.tehbrian.restrictionhelper.bukkit;
+package xyz.tehbrian.restrictionhelper.spigot;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -10,13 +10,13 @@ import xyz.tehbrian.restrictionhelper.core.Restriction;
  * A handler for all restrictions enforced by a specific version of a specific
  * plugin.
  */
-public abstract class BukkitRestriction extends Restriction<Player, Location> {
+public abstract class SpigotRestriction extends Restriction<Player, Location> {
 
     /**
      * @param logger the logger used to log whether a check fails or passes,
      *               and why
      */
-    public BukkitRestriction(final @NonNull Logger logger) {
+    public SpigotRestriction(final @NonNull Logger logger) {
         super(logger);
     }
 
