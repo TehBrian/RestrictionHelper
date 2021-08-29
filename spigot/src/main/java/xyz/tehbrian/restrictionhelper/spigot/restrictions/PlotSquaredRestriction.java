@@ -1,13 +1,13 @@
 package xyz.tehbrian.restrictionhelper.spigot.restrictions;
 
 import com.plotsquared.core.plot.Plot;
+import org.apache.logging.log4j.Logger;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
-import org.slf4j.Logger;
-import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 import xyz.tehbrian.restrictionhelper.core.ActionType;
 import xyz.tehbrian.restrictionhelper.core.RestrictionInfo;
+import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 
 import java.util.Objects;
 

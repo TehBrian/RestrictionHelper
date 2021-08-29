@@ -8,13 +8,13 @@ import com.sk89q.worldguard.protection.flags.Flags;
 import com.sk89q.worldguard.protection.flags.StateFlag;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 import com.sk89q.worldguard.protection.regions.RegionQuery;
+import org.apache.logging.log4j.Logger;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
-import org.slf4j.Logger;
-import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 import xyz.tehbrian.restrictionhelper.core.ActionType;
 import xyz.tehbrian.restrictionhelper.core.RestrictionInfo;
+import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 
 import java.util.Objects;
 
