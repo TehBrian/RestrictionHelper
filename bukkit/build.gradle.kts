@@ -16,7 +16,7 @@ repositories {
 dependencies {
     api(project(":restrictionhelper-core"))
 
-    implementation("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
+    implementation("org.spigotmc:spigot-api:1.17.1-R0.1-SNAPSHOT")
 
     // Restrictions
     compileOnly("com.plotsquared:PlotSquared-Core:5.13.11") // PlotSquared Core API
