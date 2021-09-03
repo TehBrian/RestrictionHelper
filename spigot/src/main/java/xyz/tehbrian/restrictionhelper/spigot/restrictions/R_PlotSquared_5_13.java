@@ -12,9 +12,9 @@ import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 import java.util.Objects;
 
 @RestrictionInfo(name = "PlotSquared", version = "5.13", main = "com.plotsquared.bukkit.BukkitMain")
-public final class PlotSquaredRestriction extends SpigotRestriction {
+public final class R_PlotSquared_5_13 extends SpigotRestriction {
 
-    public PlotSquaredRestriction(final @NonNull Logger logger) {
+    public R_PlotSquared_5_13(final @NonNull Logger logger) {
         super(logger);
     }
 

@@ -44,6 +44,7 @@ public class SpigotRestrictionLoader extends RestrictionLoader<Player, Location,
      *
      * @param restrictionHelper the {@code RestrictionHelper} instance
      */
+    @Override
     public void load(final @NonNull SpigotRestrictionHelper restrictionHelper) {
         final List<String> pluginNames = new ArrayList<>();
         plugins.forEach(p -> pluginNames.add(p.getName()));
@@ -52,7 +53,7 @@ public class SpigotRestrictionLoader extends RestrictionLoader<Player, Location,
         possibleRestrictions.forEach(r -> possibleRestrictionNames.add(r.getSimpleName()));
 
         logger.info(
-                "Finding applicable restrictions for plugins {} from restrictions {}.",
+                "Finding applicable restrictions for plugins [{}] from restrictions [{}].",
                 String.join(", ", pluginNames),
                 String.join(", ", possibleRestrictionNames)
         );

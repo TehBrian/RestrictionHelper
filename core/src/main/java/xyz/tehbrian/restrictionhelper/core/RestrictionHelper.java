@@ -60,11 +60,11 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
 
     /**
      * Checks whether {@code player} has sufficient permission to perform
-     * {@code action} at {@code location}. according to all registered restrictions.
+     * {@code action} at {@code location}, according to all registered restrictions.
      *
      * @param player     the player
      * @param location   the location
-     * @param actionType the ActionType
+     * @param actionType the action
      * @return true if the player has permission, false if not
      */
     public boolean checkRestrictions(final @NonNull P player, final @NonNull L location, final ActionType actionType) {
