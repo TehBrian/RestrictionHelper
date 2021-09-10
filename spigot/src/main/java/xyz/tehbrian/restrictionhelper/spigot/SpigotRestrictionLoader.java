@@ -76,9 +76,9 @@ public class SpigotRestrictionLoader extends RestrictionLoader<Player, Location,
                     logger.debug("Expected: {} Actual: {}", info.name(), description.getName());
                     continue;
                 }
-                if (!description.getMain().equals(info.main())) {
+                if (!description.getMain().equals(info.mainClass())) {
                     logger.debug("Failed because the plugin's main class did not match the RestrictionInfo's specified main class.");
-                    logger.debug("Expected: {} Actual: {}", info.main(), description.getMain());
+                    logger.debug("Expected: {} Actual: {}", info.mainClass(), description.getMain());
                     continue;
                 }
                 if (!description.getVersion().startsWith(info.version())) { // TODO make this work good.
