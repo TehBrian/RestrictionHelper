@@ -1,6 +1,7 @@
 package xyz.tehbrian.restrictionhelper.spigot.restrictions;
 
 import com.plotsquared.core.plot.Plot;
+import com.sk89q.worldedit.math.BlockVector3;
 import org.apache.logging.log4j.Logger;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -11,26 +12,30 @@ import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 
 import java.util.Objects;
 
-@RestrictionInfo(name = "PlotSquared", version = "5.13", main = "com.plotsquared.bukkit.BukkitMain")
-public final class R_PlotSquared_5_13 extends SpigotRestriction {
+@RestrictionInfo(name = "PlotSquared", version = "6_1", mainClass = "com.plotsquared.bukkit.BukkitMain")
+public final class R_PlotSquared_6_1 extends SpigotRestriction {
 
-    public R_PlotSquared_5_13(final @NonNull Logger logger) {
+    public R_PlotSquared_6_1(final @NonNull Logger logger) {
         super(logger);
     }
 
     @Override
     public boolean check(final @NonNull Player player, final @NonNull Location bukkitLoc, final ActionType actionType) {
-        final com.plotsquared.core.location.Location psLoc = new com.plotsquared.core.location.Location(
+        final com.plotsquared.core.location.Location psLoc = com.plotsquared.core.location.Location.at(
                 Objects.requireNonNull(bukkitLoc.getWorld()).getName(),
-                bukkitLoc.getBlockX(),
-                bukkitLoc.getBlockY(),
-                bukkitLoc.getBlockZ()
+                BlockVector3.at(
+                        bukkitLoc.getBlockX(),
+                        bukkitLoc.getBlockY(),
+                        bukkitLoc.getBlockZ()
+                ),
+                bukkitLoc.getYaw(),
+                bukkitLoc.getPitch()
         );
 
         if (psLoc.isPlotArea() || psLoc.isPlotRoad()) {
             // Location is in a plot area.
 
-            // TODO If the player isn't in a proper plot (ie. the road) then plot will be null.
+            // FIXME: if the player isn't in a proper plot (ie. the road) then plot will be null
             // We need to figure out another method
             // of checking whether a player can build,
             // so that players who have proper permissions

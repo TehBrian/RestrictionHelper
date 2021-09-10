@@ -18,10 +18,10 @@ import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 
 import java.util.Objects;
 
-@RestrictionInfo(name = "WorldGuard", version = "7.0.4", main = "com.sk89q.worldguard.bukkit.WorldGuardPlugin")
-public final class R_WorldGuard_7_0_4 extends SpigotRestriction {
+@RestrictionInfo(name = "WorldGuard", version = "7.0", mainClass = "com.sk89q.worldguard.bukkit.WorldGuardPlugin")
+public final class R_WorldGuard_7_0 extends SpigotRestriction {
 
-    public R_WorldGuard_7_0_4(final @NonNull Logger logger) {
+    public R_WorldGuard_7_0(final @NonNull Logger logger) {
         super(logger);
     }
 
