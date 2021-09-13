@@ -3,14 +3,16 @@ plugins {
 }
 
 repositories {
-    maven {
+    maven("https://papermc.io/repo/repository/maven-public/") { // MiniMessage for PlotSquared
+        name = "papermc-repo"
+    }
+    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") {
         name = "spigotmc-repo"
-        url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     }
 
     // Restrictions
-    maven { url = uri("https://maven.enginehub.org/repo/") } // WorldEdit and WorldGuard
-    maven { url = uri("https://mvn.intellectualsites.com/content/groups/public/") } // PlotSquared
+    maven("https://maven.enginehub.org/repo/") // WorldEdit and WorldGuard
+    maven("https://mvn.intellectualsites.com/content/groups/public/") // PlotSquared
 }
 
 dependencies {
