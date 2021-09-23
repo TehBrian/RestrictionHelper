@@ -25,6 +25,9 @@ indra {
 
     mitLicense()
 
+    publishReleasesTo("thbn", "https://repo.thbn.me/releases")
+    publishSnapshotsTo("thbn", "https://repo.thbn.me/snapshots")
+
     configurePublications{
         pom {
             url.set("https://github.com/TehBrian/RestrictionHelper")
