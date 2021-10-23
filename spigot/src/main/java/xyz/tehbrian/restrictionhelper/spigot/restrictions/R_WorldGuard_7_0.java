@@ -26,30 +26,27 @@ public final class R_WorldGuard_7_0 extends SpigotRestriction {
     }
 
     @Override
-    public boolean check(final @NonNull Player player, final @NonNull Location bukkitLoc, final ActionType actionType) {
-        Objects.requireNonNull(player);
+    public boolean check(final @NonNull Player bukkitPlayer, final @NonNull Location bukkitLoc, final ActionType actionType) {
+        Objects.requireNonNull(bukkitPlayer);
         Objects.requireNonNull(bukkitLoc);
 
-        // Convert Bukkit objects to WorldEdit's proprietary objects
-        final com.sk89q.worldedit.util.Location weLoc = BukkitAdapter.adapt(bukkitLoc);
-        final LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
+        final com.sk89q.worldedit.util.Location loc = BukkitAdapter.adapt(bukkitLoc);
+        final LocalPlayer player = WorldGuardPlugin.inst().wrapPlayer(bukkitPlayer);
 
-        // WorldGuard API
         final WorldGuard worldGuard = WorldGuard.getInstance();
 
-        // Player has permission to bypass
-        if (worldGuard.getPlatform().getSessionManager().hasBypass(localPlayer, localPlayer.getWorld())) {
+        if (worldGuard.getPlatform().getSessionManager().hasBypass(player, player.getWorld())) {
+            // Player has permission to bypass
             this.logger.trace("WG: PASSED - Player has bypass.");
             return true;
         }
 
-        // Shamelessly copied from https://worldguard.enginehub.org/en/latest/developer/regions/protection-query/
+        // https://worldguard.enginehub.org/en/latest/developer/regions/protection-query/
         final RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         final RegionQuery query = container.createQuery();
 
-        // Player has permission for everything, no need to check
-        // specific flags.
-        if (query.testState(weLoc, localPlayer, Flags.BUILD)) {
+        if (query.testState(loc, player, Flags.BUILD)) {
+            // Player has permission for everything, no need to check specific flags
             this.logger.trace("WG: PASSED - Player has BUILD flag.");
             return true;
         }
@@ -61,7 +58,7 @@ public final class R_WorldGuard_7_0 extends SpigotRestriction {
             case INTERACT -> Flags.INTERACT;
         };
 
-        if (!query.testState(weLoc, localPlayer, flagToCheck)) {
+        if (!query.testState(loc, player, flagToCheck)) {
             this.logger.trace("WG: FAILED - Player does not have {} flag.", flagToCheck.getName());
             return false;
         }
