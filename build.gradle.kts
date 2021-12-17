@@ -1,5 +1,5 @@
 plugins {
-    id("net.kyori.indra.publishing.sonatype") version "2.0.1"
+    id("net.kyori.indra.publishing.sonatype") version "2.0.6"
 }
 
 group = "xyz.tehbrian.restrictionhelper"
