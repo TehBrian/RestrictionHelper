@@ -23,5 +23,5 @@ dependencies {
     // Restrictions
     compileOnly("com.plotsquared:PlotSquared-Core:6.1.0") // PlotSquared Core API
     compileOnly("com.plotsquared:PlotSquared-Bukkit:6.1.0") // PlotSquared Bukkit API
-    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.5") // WorldGuard API
+    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.6") // WorldGuard API
 }
