@@ -16,6 +16,7 @@ import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 import java.util.Objects;
 
 @RestrictionInfo(name = "PlotSquared", version = "6.1", mainClass = "com.plotsquared.bukkit.BukkitPlatform")
+@SuppressWarnings("checkstyle:TypeName")
 public final class R_PlotSquared_6_1 extends SpigotRestriction {
 
     public R_PlotSquared_6_1(final @NonNull Logger logger) {
@@ -82,3 +83,4 @@ public final class R_PlotSquared_6_1 extends SpigotRestriction {
     }
 
 }
+
