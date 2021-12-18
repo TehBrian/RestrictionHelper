@@ -19,6 +19,10 @@ import java.util.Objects;
 @SuppressWarnings("checkstyle:TypeName")
 public final class R_PlotSquared_6_1 extends SpigotRestriction {
 
+    /**
+     * @param logger the logger used to log whether a check fails or passes,
+     *               and why
+     */
     public R_PlotSquared_6_1(final @NonNull Logger logger) {
         super(logger);
     }
