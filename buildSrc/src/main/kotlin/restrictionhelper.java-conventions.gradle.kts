@@ -20,7 +20,7 @@ dependencies {
 
 indra {
     javaVersions {
-        target(16)
+        target(17)
     }
 
     mitLicense()
