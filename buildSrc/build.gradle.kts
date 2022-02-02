@@ -7,6 +7,6 @@ repositories {
 }
 
 dependencies {
-    api("org.checkerframework:checkerframework-gradle-plugin:0.6.7")
+    api("org.checkerframework:checkerframework-gradle-plugin:0.6.8")
     api("net.kyori:indra-common:2.1.0")
 }
