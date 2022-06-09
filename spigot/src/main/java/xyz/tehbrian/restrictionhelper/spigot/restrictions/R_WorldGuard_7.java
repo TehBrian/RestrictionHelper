@@ -41,7 +41,7 @@ public final class R_WorldGuard_7 extends SpigotRestriction {
         final WorldGuard worldGuard = WorldGuard.getInstance();
 
         if (worldGuard.getPlatform().getSessionManager().hasBypass(player, player.getWorld())) {
-            // Player has permission to bypass
+            // player has permission to bypass
             this.logger.trace("WG: PASSED - Player has bypass.");
             return true;
         }
@@ -51,7 +51,7 @@ public final class R_WorldGuard_7 extends SpigotRestriction {
         final RegionQuery query = container.createQuery();
 
         if (query.testState(loc, player, Flags.BUILD)) {
-            // Player has permission for everything, no need to check specific flags
+            // player has permission for everything, no need to check specific flags
             this.logger.trace("WG: PASSED - Player has BUILD flag.");
             return true;
         }

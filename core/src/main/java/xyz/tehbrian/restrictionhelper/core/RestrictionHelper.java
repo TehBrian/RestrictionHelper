@@ -68,9 +68,9 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
      * @return true if the player has permission, false if not
      */
     public boolean checkRestrictions(final @NonNull P player, final @NonNull L location, final ActionType actionType) {
-        // Iterate through all registered restrictions.
-        // If any restriction returns false, return false immediately.
-        // If all restrictions return true, return true.
+        // iterate through all registered restrictions.
+        // if any restriction returns false, return false immediately.
+        // if all restrictions return true, return true.
         for (final R restriction : this.restrictions) {
             if (!restriction.check(player, location, actionType)) {
                 return false;

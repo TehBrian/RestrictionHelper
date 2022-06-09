@@ -39,8 +39,8 @@ public class SpigotRestrictionLoader extends RestrictionLoader<Player, Location,
     /**
      * For each plugin in {@link #plugins}, checks whether any of the
      * {@link #possibleRestrictions} were made for that specific version of
-     * that specific plugin and, if so, constructs and registers the
-     * {@code Restriction} into {@code RestrictionHelper}.
+     * that specific plugin and, if so, constructs the {@code Restriction} and
+     * registers it into {@code RestrictionHelper}.
      *
      * @param restrictionHelper the {@code RestrictionHelper} instance
      */
@@ -81,7 +81,7 @@ public class SpigotRestrictionLoader extends RestrictionLoader<Player, Location,
                     logger.debug("Expected: {} Actual: {}", info.mainClass(), description.getMain());
                     continue;
                 }
-                if (!description.getVersion().startsWith(info.version())) { // TODO make this work good.
+                if (!description.getVersion().startsWith(info.version())) { // TODO: better version checking system?
                     logger.debug("Failed because the plugin's version did not start with the RestrictionInfo's specified version.");
                     logger.debug("Expected: {} Actual: {}", info.version(), description.getVersion());
                     continue;

@@ -22,7 +22,7 @@ public abstract class RestrictionLoader<P, L, R extends Restriction<P, L>, H ext
      */
     protected final Logger logger;
     /**
-     * The plugins to check whether or not a certain {@code Restriction} from
+     * The plugins to check whether a certain {@code Restriction} from
      * {@link #possibleRestrictions} should be registered.
      */
     protected final List<T> plugins;
@@ -50,8 +50,8 @@ public abstract class RestrictionLoader<P, L, R extends Restriction<P, L>, H ext
     /**
      * For each plugin in {@link #plugins}, checks whether any of the
      * {@link #possibleRestrictions} were made for that specific version of
-     * that specific plugin and, if so, constructs and registers the
-     * {@code Restriction} into {@code RestrictionHelper}.
+     * that specific plugin and, if so, constructs the {@code Restriction} and
+     * registers it into {@code RestrictionHelper}.
      *
      * @param restrictionHelper the {@code RestrictionHelper} instance
      */
