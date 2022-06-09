@@ -88,7 +88,7 @@ public class SpigotRestrictionLoader extends RestrictionLoader<Player, Location,
                 }
 
                 this.logger.info(
-                        "Found applicable restriction {} for plugin {} version {}. Attempting to register the restriction..",
+                        "Found applicable restriction {} for plugin {} version {}. Attempting to register the restriction.",
                         restrictionClass.getCanonicalName(),
                         description.getName(),
                         description.getVersion()
@@ -98,7 +98,7 @@ public class SpigotRestrictionLoader extends RestrictionLoader<Player, Location,
                 try {
                     constructor = restrictionClass.getConstructor(Logger.class);
                 } catch (final NoSuchMethodException e) {
-                    this.logger.error("Failed to register the restriction because it didn't have the proper constructor!", e);
+                    this.logger.error("Failed to register the restriction because it lacked the proper constructor.", e);
                     continue;
                 }
 
@@ -106,14 +106,14 @@ public class SpigotRestrictionLoader extends RestrictionLoader<Player, Location,
                 try {
                     restriction = constructor.newInstance(this.logger);
                 } catch (final InstantiationException | IllegalAccessException | InvocationTargetException e) {
-                    this.logger.error("Failed to register the restriction because there was an error when trying to instantiate it!", e);
+                    this.logger.error("Failed to register the restriction because its constructor threw an error.", e);
                     continue;
                 }
 
                 restrictionHelper.registerRestriction(restriction);
 
                 this.logger.info(
-                        "Registered the restriction for {} successfully!",
+                        "Registered the restriction for {} successfully.",
                         description.getName()
                 );
             }
