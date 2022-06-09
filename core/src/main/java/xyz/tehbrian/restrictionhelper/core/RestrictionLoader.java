@@ -1,7 +1,7 @@
 package xyz.tehbrian.restrictionhelper.core;
 
-import org.apache.logging.log4j.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.slf4j.Logger;
 
 import java.util.List;
 

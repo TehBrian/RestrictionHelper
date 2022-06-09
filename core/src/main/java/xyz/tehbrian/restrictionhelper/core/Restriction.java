@@ -1,7 +1,7 @@
 package xyz.tehbrian.restrictionhelper.core;
 
-import org.apache.logging.log4j.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.slf4j.Logger;
 
 /**
  * A handler for all restrictions enforced by a specific version of a specific

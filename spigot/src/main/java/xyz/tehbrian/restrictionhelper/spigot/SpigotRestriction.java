@@ -1,9 +1,9 @@
 package xyz.tehbrian.restrictionhelper.spigot;
 
-import org.apache.logging.log4j.Logger;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.slf4j.Logger;
 import xyz.tehbrian.restrictionhelper.core.Restriction;
 
 /**
