@@ -93,10 +93,10 @@
 
     <!-- Checks for Headers                            -->
     <!-- See https://checkstyle.org/config_header.html -->
-    <!--<module name="Header">-->
-    <!--    <property name="headerFile" value="${checkstyle.header.file}"/>-->
-    <!--    <property name="fileExtensions" value="java"/>-->
-    <!--</module>-->
+    <!--    <module name="Header">-->
+    <!--        <property name="headerFile" value="${checkstyle.header.file}"/>-->
+    <!--        <property name="fileExtensions" value="java"/>-->
+    <!--    </module>-->
 
     <!-- Filter out Checkstyle warnings that have been suppressed with the @SuppressWarnings annotation -->
     <module name="SuppressWarningsFilter"/>
@@ -113,13 +113,14 @@
         <module name="JavadocStyle">
             <property name="checkFirstSentence" value="false"/>
         </module>
-        <module name="MissingJavadocMethod"/>
+        <!--        <module name="MissingJavadocMethod"/>-->
 
         <!-- Checks for Naming Conventions.                -->
         <!-- See https://checkstyle.org/config_naming.html -->
         <module name="ConstantName"/>
         <module name="LocalFinalVariableName"/>
         <module name="LocalVariableName"/>
+        <module name="MemberName"/>
         <module name="MethodName"/>
         <module name="PackageName"/>
         <module name="ParameterName"/>
@@ -185,7 +186,7 @@
         <!-- See https://checkstyle.org/config_misc.html -->
         <module name="ArrayTypeStyle"/>
         <module name="FinalParameters"/>
-        <!--<module name="TodoComment"/>-->
+        <!--        <module name="TodoComment"/>-->
         <module name="UpperEll"/>
 
         <module name="RequireThis">
