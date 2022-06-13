@@ -21,7 +21,7 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
 
     // Restrictions
-    compileOnly("com.plotsquared:PlotSquared-Core:6.8.1") // PlotSquared Core API
+    compileOnly("com.plotsquared:PlotSquared-Core:6.9.0") // PlotSquared Core API
     compileOnly("com.plotsquared:PlotSquared-Bukkit:6.8.1") // PlotSquared Bukkit API
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.7") // WorldGuard API
 }
