@@ -3,16 +3,13 @@ plugins {
 }
 
 repositories {
-    maven("https://repo.papermc.io/repository/maven-public/") { // MiniMessage for PlotSquared
-        name = "papermc-repo"
-    }
+    mavenCentral()
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") {
         name = "spigotmc-repo"
     }
 
-    // Restrictions
-    maven("https://maven.enginehub.org/repo/") // WorldEdit and WorldGuard
-    maven("https://mvn.intellectualsites.com/content/groups/public/") // PlotSquared
+    // Built-in Restrictions
+    maven("https://maven.enginehub.org/repo/") // WorldGuard
 }
 
 dependencies {
@@ -20,8 +17,8 @@ dependencies {
 
     compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
 
-    // Restrictions
-    compileOnly("com.plotsquared:PlotSquared-Core:6.8.1") // PlotSquared Core API
-    compileOnly("com.plotsquared:PlotSquared-Bukkit:6.8.1") // PlotSquared Bukkit API
-    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.7") // WorldGuard API
+    // Built-in Restrictions
+    compileOnly("com.plotsquared:PlotSquared-Core:6.9.0") { isTransitive = false }
+    compileOnly("com.plotsquared:PlotSquared-Bukkit:6.9.0") { isTransitive = false }
+    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.7")
 }
