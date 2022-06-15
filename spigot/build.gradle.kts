@@ -3,7 +3,7 @@ plugins {
 }
 
 repositories {
-    maven("https://papermc.io/repo/repository/maven-public/") { // MiniMessage for PlotSquared
+    maven("https://repo.papermc.io/repository/maven-public/") { // MiniMessage for PlotSquared
         name = "papermc-repo"
     }
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") {
