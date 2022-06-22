@@ -60,7 +60,7 @@
 
     <!-- Checks that a package-info.java file exists for each package. -->
     <!-- See https://checkstyle.org/config_javadoc.html#JavadocPackage -->
-    <module name="JavadocPackage"/>
+    <!--    <module name="JavadocPackage"/>-->
 
     <!-- Checks whether files end with a new line.                      -->
     <!-- See https://checkstyle.org/config_misc.html#NewlineAtEndOfFile -->
@@ -98,12 +98,7 @@
     <!--        <property name="fileExtensions" value="java"/>-->
     <!--    </module>-->
 
-    <!-- Filter out Checkstyle warnings that have been suppressed with the @SuppressWarnings annotation -->
-    <module name="SuppressWarningsFilter"/>
-
     <module name="TreeWalker">
-        <!-- Make the @SuppressWarnings annotations available to Checkstyle -->
-        <module name="SuppressWarningsHolder"/>
 
         <!-- Checks for Javadoc comments.                   -->
         <!-- See https://checkstyle.org/config_javadoc.html -->
