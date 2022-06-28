@@ -19,6 +19,6 @@ dependencies {
 
     // Built-in Restrictions
     compileOnly("com.plotsquared:PlotSquared-Core:6.9.0") { isTransitive = false }
-    compileOnly("com.plotsquared:PlotSquared-Bukkit:6.9.0") { isTransitive = false }
+    compileOnly("com.plotsquared:PlotSquared-Bukkit:6.9.1") { isTransitive = false }
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.7")
 }
