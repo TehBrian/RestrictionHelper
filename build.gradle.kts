@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "xyz.tehbrian.restrictionhelper"
-version = "0.3.0"
+version = "0.3.1"
 description = "A small shade-in dependency for plugin developers, to ease the pain of checking the building restrictions of various plugins."
 
 indraSonatype {
