@@ -1,6 +1,5 @@
 plugins {
     `java-library`
-    id("org.checkerframework")
     id("net.kyori.indra")
     id("net.kyori.indra.checkstyle")
     id("net.kyori.indra.publishing")
