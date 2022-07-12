@@ -15,7 +15,7 @@ repositories {
 dependencies {
     api(project(":restrictionhelper-core"))
 
-    compileOnly("org.spigotmc:spigot-api:1.18.2-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT")
 
     // Built-in Restrictions
     compileOnly("com.plotsquared:PlotSquared-Core:6.9.2") { isTransitive = false }
