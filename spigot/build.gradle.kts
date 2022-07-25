@@ -18,7 +18,7 @@ dependencies {
     compileOnly("org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT")
 
     // Built-in Restrictions
-    compileOnly("com.plotsquared:PlotSquared-Core:6.9.2") { isTransitive = false }
+    compileOnly("com.plotsquared:PlotSquared-Core:6.9.3") { isTransitive = false }
     compileOnly("com.plotsquared:PlotSquared-Bukkit:6.9.3") { isTransitive = false }
     compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.7")
 }
