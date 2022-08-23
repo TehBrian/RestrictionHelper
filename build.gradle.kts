@@ -4,7 +4,7 @@ plugins {
 
 group = "xyz.tehbrian.restrictionhelper"
 version = "0.3.1"
-description = "A small shade-in dependency for plugin developers, to ease the pain of checking the building restrictions of various plugins."
+description = "A small library that eases the pain of checking the build restrictions of various plugins."
 
 indraSonatype {
     useAlternateSonatypeOSSHost("s01")
