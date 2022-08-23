@@ -18,7 +18,7 @@ import java.util.List;
 
 /**
  * A utility class which registers {@link Restriction}s into a
- * {@link RestrictionHelper} instance according to {@link #plugins}.
+ * {@link RestrictionHelper} instance according to a list of plugins.
  */
 public class SpigotRestrictionLoader
     extends RestrictionLoader<Player, Location, SpigotRestriction, SpigotRestrictionHelper, Plugin> {

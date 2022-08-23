@@ -1,7 +1,7 @@
 package xyz.tehbrian.restrictionhelper.core;
 
 /**
- * Various types of actions that a player can perform.
+ * Types of actions that a player can perform.
  */
 public enum ActionType {
   /**
@@ -20,7 +20,7 @@ public enum ActionType {
   /**
    * Non-destructively interacting with a block. This includes actions
    * such as opening and closing doors, stepping on pressure plates,
-   * pressing a button, etc.
+   * and pressing a button.
    */
   INTERACT,
 }

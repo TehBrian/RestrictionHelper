@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The main class which holds the list of {@code Restriction}s to be checked
- * against.
+ * The main class for RestrictionHelper. It mainly serves to hold the list of
+ * {@link Restriction}s to be checked against.
  *
  * @param <P> the player type
  * @param <L> the location type
@@ -23,9 +23,7 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
   /**
    * Registers a {@code Restriction} to be checked against.
    * <p>
-   * NOTE: Since RestrictionHelper is a shade-in dependency, other plugins
-   * <b>will not</b> be able to check against restrictions that your plugin
-   * registers.
+   * NOTE: This <b>will not</b> affect the restrictions of other plugins.
    *
    * @param restriction the {@code Restriction} to register
    */
@@ -36,9 +34,7 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
   /**
    * Unregisters a {@code Restriction}.
    * <p>
-   * NOTE: Since RestrictionHelper is a shade-in dependency, other plugins
-   * <b>will not</b> be affected by the restrictions that your plugin
-   * unregisters.
+   * NOTE: This <b>will not</b> affect the restrictions of other plugins.
    *
    * @param restriction the {@code Restriction} to unregister
    */
@@ -49,8 +45,7 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
   /**
    * Gets the internal list of registered {@code Restrictions}.
    * <p>
-   * NOTE: Since RestrictionHelper is a shade-in dependency, this list
-   * <b>is not</b> shared with other plugins.
+   * NOTE: This list <b>is not</b> shared with other plugins.
    *
    * @return the list of registered {@code Restrictions}
    */

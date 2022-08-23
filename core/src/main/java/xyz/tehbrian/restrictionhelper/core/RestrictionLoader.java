@@ -7,15 +7,15 @@ import java.util.List;
 
 /**
  * A utility class which registers {@link Restriction}s into a
- * {@link RestrictionHelper} instance according to {@link #plugins}.
+ * {@link RestrictionHelper} instance according to a list of plugins.
  *
- * @param <P> the player type
- * @param <L> the location type
- * @param <R> the {@code Restriction} type
- * @param <H> the {@code RestrictionHelper} type
- * @param <T> the plugin type
+ * @param <PLAYER> the player type
+ * @param <L>      the location type
+ * @param <R>      the {@code Restriction} type
+ * @param <H>      the {@code RestrictionHelper} type
+ * @param <PLUGIN> the plugin type
  */
-public abstract class RestrictionLoader<P, L, R extends Restriction<P, L>, H extends RestrictionHelper<P, L, R>, T> {
+public abstract class RestrictionLoader<PLAYER, L, R extends Restriction<PLAYER, L>, H extends RestrictionHelper<PLAYER, L, R>, PLUGIN> {
 
   /**
    * Used to log whether a check fails or passes, and why.
@@ -25,7 +25,7 @@ public abstract class RestrictionLoader<P, L, R extends Restriction<P, L>, H ext
    * The plugins to check whether a certain {@code Restriction} from
    * {@link #possibleRestrictions} should be registered.
    */
-  protected final List<T> plugins;
+  protected final List<PLUGIN> plugins;
   /**
    * The {@code Restriction}s to maybe be registered.
    */
@@ -39,7 +39,7 @@ public abstract class RestrictionLoader<P, L, R extends Restriction<P, L>, H ext
    */
   public RestrictionLoader(
       final @NonNull Logger logger,
-      final @NonNull List<T> plugins,
+      final @NonNull List<PLUGIN> plugins,
       final @NonNull List<Class<? extends R>> possibleRestrictions
   ) {
     this.logger = logger;
