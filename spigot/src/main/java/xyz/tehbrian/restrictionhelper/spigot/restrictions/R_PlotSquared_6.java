@@ -4,7 +4,6 @@ import com.plotsquared.bukkit.player.BukkitPlayer;
 import com.plotsquared.bukkit.util.BukkitUtil;
 import com.plotsquared.core.permissions.Permission;
 import com.plotsquared.core.plot.Plot;
-import com.plotsquared.core.util.Permissions;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -41,13 +40,13 @@ public final class R_PlotSquared_6 extends SpigotRestriction {
 
     if (loc.isPlotRoad()) {
       final boolean passed = switch (actionType) {
-        case ALL -> (Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_DESTROY_ROAD)
-            && Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_BUILD_ROAD)
-            && Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_INTERACT_ROAD)
-            && Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_DESTROY_VEHICLE_ROAD));
-        case BREAK -> Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_DESTROY_ROAD);
-        case PLACE -> Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_BUILD_ROAD);
-        case INTERACT -> Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_INTERACT_ROAD);
+        case ALL -> (player.hasPermission(Permission.PERMISSION_ADMIN_DESTROY_ROAD.toString())
+            && player.hasPermission(Permission.PERMISSION_ADMIN_BUILD_ROAD.toString())
+            && player.hasPermission(Permission.PERMISSION_ADMIN_INTERACT_ROAD.toString())
+            && player.hasPermission(Permission.PERMISSION_ADMIN_DESTROY_VEHICLE_ROAD.toString()));
+        case BREAK -> player.hasPermission(Permission.PERMISSION_ADMIN_DESTROY_ROAD.toString());
+        case PLACE -> player.hasPermission(Permission.PERMISSION_ADMIN_BUILD_ROAD.toString());
+        case INTERACT -> player.hasPermission(Permission.PERMISSION_ADMIN_INTERACT_ROAD.toString());
       };
       if (passed) {
         this.logger.trace("PS: PASSED - Checked player permissions. Use LuckPerms verbose to see which one.");
@@ -68,13 +67,13 @@ public final class R_PlotSquared_6 extends SpigotRestriction {
         return true;
       } else {
         final boolean override = switch (actionType) {
-          case ALL -> (Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_DESTROY_UNOWNED)
-              && Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_BUILD_UNOWNED)
-              && Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_INTERACT_UNOWNED)
-              && Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_DESTROY_VEHICLE_UNOWNED));
-          case BREAK -> Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_DESTROY_UNOWNED);
-          case PLACE -> Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_BUILD_UNOWNED);
-          case INTERACT -> Permissions.hasPermission(player, Permission.PERMISSION_ADMIN_INTERACT_UNOWNED);
+          case ALL -> (player.hasPermission(Permission.PERMISSION_ADMIN_DESTROY_UNOWNED.toString())
+              && player.hasPermission(Permission.PERMISSION_ADMIN_BUILD_UNOWNED.toString())
+              && player.hasPermission(Permission.PERMISSION_ADMIN_INTERACT_UNOWNED.toString())
+              && player.hasPermission(Permission.PERMISSION_ADMIN_DESTROY_VEHICLE_UNOWNED.toString()));
+          case BREAK -> player.hasPermission(Permission.PERMISSION_ADMIN_DESTROY_UNOWNED.toString());
+          case PLACE -> player.hasPermission(Permission.PERMISSION_ADMIN_BUILD_UNOWNED.toString());
+          case INTERACT -> player.hasPermission(Permission.PERMISSION_ADMIN_INTERACT_UNOWNED.toString());
         };
         if (override) {
           this.logger.trace("PS: PASSED - Player is not added to plot but has override permission.");
