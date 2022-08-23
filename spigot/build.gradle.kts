@@ -1,24 +1,24 @@
 plugins {
-    id("restrictionhelper.java-conventions")
+  id("restrictionhelper.java-conventions")
 }
 
 repositories {
-    mavenCentral()
-    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") {
-        name = "spigotmc-repo"
-    }
+  mavenCentral()
+  maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") {
+    name = "spigotmc-repo"
+  }
 
-    // Built-in Restrictions
-    maven("https://maven.enginehub.org/repo/") // WorldGuard
+  // Built-in Restrictions
+  maven("https://maven.enginehub.org/repo/") // WorldGuard
 }
 
 dependencies {
-    api(project(":restrictionhelper-core"))
+  api(project(":restrictionhelper-core"))
 
-    compileOnly("org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT")
+  compileOnly("org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT")
 
-    // Built-in Restrictions
-    compileOnly("com.plotsquared:PlotSquared-Core:6.9.4") { isTransitive = false }
-    compileOnly("com.plotsquared:PlotSquared-Bukkit:6.9.4") { isTransitive = false }
-    compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.7")
+  // Built-in Restrictions
+  compileOnly("com.plotsquared:PlotSquared-Core:6.9.4") { isTransitive = false }
+  compileOnly("com.plotsquared:PlotSquared-Bukkit:6.9.4") { isTransitive = false }
+  compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.7")
 }

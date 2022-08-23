@@ -1,11 +1,11 @@
 plugins {
-    `kotlin-dsl`
+  `kotlin-dsl`
 }
 
 repositories {
-    gradlePluginPortal()
+  gradlePluginPortal()
 }
 
 dependencies {
-    api("net.kyori:indra-common:2.1.1")
+  api("net.kyori:indra-common:2.1.1")
 }
