@@ -14,6 +14,8 @@ indra {
     target(17)
   }
 
+  github("TehBrian", "RestrictionHelper")
+
   mitLicense()
 
   publishReleasesTo("thbn", "https://repo.thbn.me/releases")
@@ -21,20 +23,12 @@ indra {
 
   configurePublications {
     pom {
-      url.set("https://github.com/TehBrian/RestrictionHelper")
-
       developers {
         developer {
           name.set("TehBrian")
           url.set("https://tehbrian.xyz")
-          email.set("tehbrian@protonmail.com")
+          email.set("tehbrian@proton.me")
         }
-      }
-
-      scm {
-        connection.set("scm:git:git://github.com/TehBrian/RestrictionHelper.git")
-        developerConnection.set("scm:git:ssh://github.com/TehBrian/RestrictionHelper.git")
-        url.set("https://github.com/TehBrian/RestrictionHelper.git")
       }
     }
   }
