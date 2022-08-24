@@ -25,7 +25,7 @@ indra {
     pom {
       developers {
         developer {
-          name.set("TehBrian")
+          id.set("TehBrian")
           url.set("https://tehbrian.xyz")
           email.set("tehbrian@proton.me")
         }
