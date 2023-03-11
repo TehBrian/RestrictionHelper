@@ -1,4 +1,4 @@
-package xyz.tehbrian.restrictionhelper.core;
+package dev.tehbrian.restrictionhelper.core;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

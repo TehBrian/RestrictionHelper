@@ -1,4 +1,4 @@
-package xyz.tehbrian.restrictionhelper.core;
+package dev.tehbrian.restrictionhelper.core;
 
 /**
  * Types of actions that a player can perform.

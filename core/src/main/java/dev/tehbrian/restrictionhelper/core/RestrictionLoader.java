@@ -1,4 +1,4 @@
-package xyz.tehbrian.restrictionhelper.core;
+package dev.tehbrian.restrictionhelper.core;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;

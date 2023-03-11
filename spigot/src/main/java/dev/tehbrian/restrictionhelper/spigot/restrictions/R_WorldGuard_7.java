@@ -1,4 +1,4 @@
-package xyz.tehbrian.restrictionhelper.spigot.restrictions;
+package dev.tehbrian.restrictionhelper.spigot.restrictions;
 
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldguard.LocalPlayer;
@@ -8,13 +8,13 @@ import com.sk89q.worldguard.protection.flags.Flags;
 import com.sk89q.worldguard.protection.flags.StateFlag;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 import com.sk89q.worldguard.protection.regions.RegionQuery;
+import dev.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
-import xyz.tehbrian.restrictionhelper.core.ActionType;
-import xyz.tehbrian.restrictionhelper.core.RestrictionInfo;
-import xyz.tehbrian.restrictionhelper.spigot.SpigotRestriction;
+import dev.tehbrian.restrictionhelper.core.ActionType;
+import dev.tehbrian.restrictionhelper.core.RestrictionInfo;
 
 import java.util.Objects;
 
