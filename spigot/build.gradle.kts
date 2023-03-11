@@ -4,9 +4,7 @@ plugins {
 
 repositories {
   mavenCentral()
-  maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/") {
-    name = "spigotmc-repo"
-  }
+  maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
 
   // Built-in Restrictions
   maven("https://maven.enginehub.org/repo/") // WorldGuard
@@ -15,10 +13,10 @@ repositories {
 dependencies {
   api(project(":restrictionhelper-core"))
 
-  compileOnly("org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT")
+  compileOnly("org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT")
 
   // Built-in Restrictions
-  compileOnly("com.plotsquared:PlotSquared-Core:6.9.4") { isTransitive = false }
-  compileOnly("com.plotsquared:PlotSquared-Bukkit:6.9.4") { isTransitive = false }
+  compileOnly("com.plotsquared:PlotSquared-Core:6.11.1") { isTransitive = false }
+  compileOnly("com.plotsquared:PlotSquared-Bukkit:6.11.1") { isTransitive = false }
   compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.7")
 }
