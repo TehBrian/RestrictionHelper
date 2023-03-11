@@ -53,7 +53,7 @@ public class SpigotRestrictionLoader
     final List<String> possibleRestrictionNames = new ArrayList<>();
     possibleRestrictions.forEach(r -> possibleRestrictionNames.add(r.getSimpleName()));
 
-    logger.info(
+    logger.debug(
         "Finding applicable restrictions for plugins [{}] from restrictions [{}].",
         String.join(", ", pluginNames),
         String.join(", ", possibleRestrictionNames)
