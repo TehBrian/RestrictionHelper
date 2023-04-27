@@ -7,6 +7,6 @@ repositories {
 }
 
 dependencies {
-  api("org.slf4j:slf4j-api:2.0.6")
-  compileOnly("org.checkerframework:checker-qual:3.32.0")
+  api("org.slf4j:slf4j-api:2.0.7")
+  compileOnly("org.checkerframework:checker-qual:3.33.0")
 }
