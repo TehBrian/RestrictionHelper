@@ -1,7 +1,5 @@
 package dev.tehbrian.restrictionhelper.core;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +25,7 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
    *
    * @param restriction the {@code Restriction} to register
    */
-  public void registerRestriction(final @NonNull R restriction) {
+  public void registerRestriction(final R restriction) {
     this.restrictions.add(restriction);
   }
 
@@ -38,7 +36,7 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
    *
    * @param restriction the {@code Restriction} to unregister
    */
-  public void unregisterRestriction(final @NonNull R restriction) {
+  public void unregisterRestriction(final R restriction) {
     this.restrictions.remove(restriction);
   }
 
@@ -62,7 +60,7 @@ public abstract class RestrictionHelper<P, L, R extends Restriction<P, L>> {
    * @param actionType the action
    * @return true if the player has permission, false if not
    */
-  public boolean checkRestrictions(final @NonNull P player, final @NonNull L location, final ActionType actionType) {
+  public boolean checkRestrictions(final P player, final L location, final ActionType actionType) {
     // iterate through all registered restrictions.
     // if any restriction returns false, return false immediately.
     // if all restrictions return true, return true.

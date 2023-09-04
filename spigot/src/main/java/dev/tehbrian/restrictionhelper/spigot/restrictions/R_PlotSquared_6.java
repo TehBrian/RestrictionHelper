@@ -9,7 +9,6 @@ import dev.tehbrian.restrictionhelper.core.RestrictionInfo;
 import dev.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
 
 import java.util.Objects;
@@ -22,14 +21,14 @@ public final class R_PlotSquared_6 extends SpigotRestriction {
    * @param logger the logger used to log whether a check fails or passes,
    *               and why
    */
-  public R_PlotSquared_6(final @NonNull Logger logger) {
+  public R_PlotSquared_6(final Logger logger) {
     super(logger);
   }
 
   @Override
   public boolean check(
-      final @NonNull Player bukkitPlayer,
-      final @NonNull Location bukkitLoc,
+      final Player bukkitPlayer,
+      final Location bukkitLoc,
       final ActionType actionType
   ) {
     Objects.requireNonNull(bukkitPlayer);

@@ -8,7 +8,6 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
-import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
 
 import java.lang.reflect.Constructor;
@@ -30,9 +29,9 @@ public class SpigotRestrictionLoader
    * @param possibleRestrictions the {@code Restriction}s to maybe be registered
    */
   public SpigotRestrictionLoader(
-      final @NonNull Logger logger,
-      final @NonNull List<Plugin> plugins,
-      final @NonNull List<Class<? extends SpigotRestriction>> possibleRestrictions
+      final Logger logger,
+      final List<Plugin> plugins,
+      final List<Class<? extends SpigotRestriction>> possibleRestrictions
   ) {
     super(logger, plugins, possibleRestrictions);
   }
@@ -46,7 +45,7 @@ public class SpigotRestrictionLoader
    * @param restrictionHelper the {@code RestrictionHelper} instance
    */
   @Override
-  public void load(final @NonNull SpigotRestrictionHelper restrictionHelper) {
+  public void load(final SpigotRestrictionHelper restrictionHelper) {
     final List<String> pluginNames = new ArrayList<>();
     plugins.forEach(p -> pluginNames.add(p.getName()));
 

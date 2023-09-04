@@ -1,6 +1,5 @@
 package dev.tehbrian.restrictionhelper.core;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
 
 import java.util.List;
@@ -38,9 +37,9 @@ public abstract class RestrictionLoader<PLAYER, L, R extends Restriction<PLAYER,
    * @param possibleRestrictions the {@code Restriction}s to maybe be registered
    */
   public RestrictionLoader(
-      final @NonNull Logger logger,
-      final @NonNull List<PLUGIN> plugins,
-      final @NonNull List<Class<? extends R>> possibleRestrictions
+      final Logger logger,
+      final List<PLUGIN> plugins,
+      final List<Class<? extends R>> possibleRestrictions
   ) {
     this.logger = logger;
     this.plugins = plugins;
@@ -55,6 +54,6 @@ public abstract class RestrictionLoader<PLAYER, L, R extends Restriction<PLAYER,
    *
    * @param restrictionHelper the {@code RestrictionHelper} instance
    */
-  public abstract void load(@NonNull H restrictionHelper);
+  public abstract void load(H restrictionHelper);
 
 }

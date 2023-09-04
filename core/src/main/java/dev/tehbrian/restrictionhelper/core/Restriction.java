@@ -1,6 +1,5 @@
 package dev.tehbrian.restrictionhelper.core;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
 
 /**
@@ -21,7 +20,7 @@ public abstract class Restriction<P, L> {
    * @param logger the {@code Logger} used to log whether a check fails or
    *               passes, and why
    */
-  public Restriction(final @NonNull Logger logger) {
+  public Restriction(final Logger logger) {
     this.logger = logger;
   }
 
@@ -34,6 +33,6 @@ public abstract class Restriction<P, L> {
    * @param actionType the {@code ActionType}
    * @return true if the player has permission, false if not
    */
-  public abstract boolean check(@NonNull P player, @NonNull L location, ActionType actionType);
+  public abstract boolean check(P player, L location, ActionType actionType);
 
 }
