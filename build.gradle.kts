@@ -3,5 +3,5 @@ plugins {
 }
 
 group = "dev.tehbrian.restrictionhelper"
-version = "0.3.4"
+version = "0.3.5"
 description = "A small library that eases the pain of checking the build restrictions of various plugins."
