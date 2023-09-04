@@ -48,21 +48,21 @@ public final class R_PlotSquared_6_7 extends SpigotRestriction {
         case INTERACT -> player.hasPermission(Permission.PERMISSION_ADMIN_INTERACT_ROAD.toString());
       };
       if (passed) {
-        this.logger.trace("PS: PASSED - Checked player permissions. Use LuckPerms verbose to see which one.");
+        this.logger.debug("PS: PASSED - Checked player permissions. Use LuckPerms verbose to see which one.");
       } else {
-        this.logger.trace("PS: FAILED - Checked player permissions. Use LuckPerms verbose to see which one.");
+        this.logger.debug("PS: FAILED - Checked player permissions. Use LuckPerms verbose to see which one.");
       }
       return passed;
     } else if (loc.isPlotArea()) {
       final Plot plot = loc.getPlot();
 
       if (plot == null) {
-        this.logger.trace("PS: FAILED - Plot is null.");
+        this.logger.debug("PS: FAILED - Plot is null.");
         return false;
       }
 
       if (plot.isAdded(player.getUUID())) {
-        this.logger.trace("PS: PASSED - Player is added to plot.");
+        this.logger.debug("PS: PASSED - Player is added to plot.");
         return true;
       } else {
         final boolean override = switch (actionType) {
@@ -75,15 +75,15 @@ public final class R_PlotSquared_6_7 extends SpigotRestriction {
           case INTERACT -> player.hasPermission(Permission.PERMISSION_ADMIN_INTERACT_UNOWNED.toString());
         };
         if (override) {
-          this.logger.trace("PS: PASSED - Player is not added to plot but has override permission.");
+          this.logger.debug("PS: PASSED - Player is not added to plot but has override permission.");
           return true;
         } else {
-          this.logger.trace("PS: FAILED - Player is not added to plot and does not have override permission.");
+          this.logger.debug("PS: FAILED - Player is not added to plot and does not have override permission.");
           return false;
         }
       }
     } else {
-      this.logger.trace("PS: PASSED - Location isn't PlotArea or PlotRoad.");
+      this.logger.debug("PS: PASSED - Location isn't PlotArea or PlotRoad.");
       return true;
     }
   }
