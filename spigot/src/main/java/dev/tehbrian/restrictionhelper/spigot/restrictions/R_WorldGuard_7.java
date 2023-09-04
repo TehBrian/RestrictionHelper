@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 
 import java.util.Objects;
 
-@RestrictionInfo(name = "WorldGuard", version = "7", mainClass = "com.sk89q.worldguard.bukkit.WorldGuardPlugin")
+@RestrictionInfo(name = "WorldGuard", version = "^7.*", mainClass = "com.sk89q.worldguard.bukkit.WorldGuardPlugin")
 @SuppressWarnings("checkstyle:TypeName")
 public final class R_WorldGuard_7 extends SpigotRestriction {
 

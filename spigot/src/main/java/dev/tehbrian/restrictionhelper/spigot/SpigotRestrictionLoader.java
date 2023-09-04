@@ -14,6 +14,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * A utility class which registers {@link Restriction}s into a
@@ -82,8 +83,9 @@ public class SpigotRestrictionLoader
           logger.debug("Expected: {} Actual: {}", info.mainClass(), description.getMain());
           continue;
         }
-        if (!description.getVersion().startsWith(info.version())) { // TODO: better version checking system?
-          logger.debug("Failed because the plugin's version did not start with the RestrictionInfo's specified version.");
+        final Pattern versionPattern = Pattern.compile(info.version());
+        if (!versionPattern.matcher(description.getVersion()).find()) {
+          logger.debug("Failed because the plugin's version did not match the RestrictionInfo's specified version.");
           logger.debug("Expected: {} Actual: {}", info.version(), description.getVersion());
           continue;
         }
