@@ -4,13 +4,13 @@ import com.plotsquared.bukkit.player.BukkitPlayer;
 import com.plotsquared.bukkit.util.BukkitUtil;
 import com.plotsquared.core.permissions.Permission;
 import com.plotsquared.core.plot.Plot;
+import dev.tehbrian.restrictionhelper.core.ActionType;
+import dev.tehbrian.restrictionhelper.core.RestrictionInfo;
 import dev.tehbrian.restrictionhelper.spigot.SpigotRestriction;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
-import dev.tehbrian.restrictionhelper.core.ActionType;
-import dev.tehbrian.restrictionhelper.core.RestrictionInfo;
 
 import java.util.Objects;
 

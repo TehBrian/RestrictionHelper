@@ -1,9 +1,9 @@
 package dev.tehbrian.restrictionhelper.spigot;
 
-import org.bukkit.Location;
-import org.bukkit.entity.Player;
 import dev.tehbrian.restrictionhelper.core.Restriction;
 import dev.tehbrian.restrictionhelper.core.RestrictionHelper;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 /**
  * The main class for RestrictionHelper. It mainly serves to hold the list of

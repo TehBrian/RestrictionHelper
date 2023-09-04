@@ -1,15 +1,15 @@
 package dev.tehbrian.restrictionhelper.spigot;
 
+import dev.tehbrian.restrictionhelper.core.Restriction;
+import dev.tehbrian.restrictionhelper.core.RestrictionHelper;
+import dev.tehbrian.restrictionhelper.core.RestrictionInfo;
+import dev.tehbrian.restrictionhelper.core.RestrictionLoader;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
-import dev.tehbrian.restrictionhelper.core.Restriction;
-import dev.tehbrian.restrictionhelper.core.RestrictionHelper;
-import dev.tehbrian.restrictionhelper.core.RestrictionInfo;
-import dev.tehbrian.restrictionhelper.core.RestrictionLoader;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
