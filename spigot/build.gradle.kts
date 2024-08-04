@@ -10,10 +10,13 @@ repositories {
 
 dependencies {
   api(project(":restrictionhelper-core"))
+  implementation("org.jspecify:jspecify:1.0.0")
+
   compileOnly("org.spigotmc:spigot-api:1.21-R0.1-SNAPSHOT")
 
   implementation(platform("com.intellectualsites.bom:bom-newest:1.47"))
-  compileOnly("com.intellectualsites.plotsquared:plotsquared-core:7.38")
-  compileOnly("com.intellectualsites.plotsquared:plotsquared-bukkit:7.38") { isTransitive = false }
+  compileOnly("com.intellectualsites.plotsquared:plotsquared-core")
+  compileOnly("com.intellectualsites.plotsquared:plotsquared-bukkit") { isTransitive = false }
+
   compileOnly("com.sk89q.worldguard:worldguard-bukkit:7.0.10")
 }

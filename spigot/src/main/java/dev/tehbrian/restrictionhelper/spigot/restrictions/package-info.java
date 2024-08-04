@@ -3,4 +3,7 @@
  * via {@link dev.tehbrian.restrictionhelper.spigot.SpigotRestrictionHelper#registerRestriction}
  * or with {@link dev.tehbrian.restrictionhelper.spigot.SpigotRestrictionLoader}.
  */
+@NullMarked
 package dev.tehbrian.restrictionhelper.spigot.restrictions;
+
+import org.jspecify.annotations.NullMarked;
