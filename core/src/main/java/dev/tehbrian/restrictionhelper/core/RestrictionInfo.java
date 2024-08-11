@@ -9,26 +9,26 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface RestrictionInfo {
 
-  /**
-   * The name of the plugin to which this restriction is applicable.
-   *
-   * @return the name
-   */
-  String name();
+	/**
+	 * The name of the plugin to which this restriction is applicable.
+	 *
+	 * @return the name
+	 */
+	String name();
 
-  /**
-   * The version of the plugin to which this restriction is applicable.
-   *
-   * @return the version
-   */
-  String version();
+	/**
+	 * The version of the plugin to which this restriction is applicable.
+	 *
+	 * @return the version
+	 */
+	String version();
 
-  /**
-   * The fully-qualified name of the main class of the plugin to which this
-   * restriction is applicable.
-   *
-   * @return the main class
-   */
-  String mainClass();
+	/**
+	 * The fully-qualified name of the main class of the plugin to which this
+	 * restriction is applicable.
+	 *
+	 * @return the main class
+	 */
+	String mainClass();
 
 }

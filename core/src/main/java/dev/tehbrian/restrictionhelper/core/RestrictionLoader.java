@@ -16,44 +16,44 @@ import java.util.List;
  */
 public abstract class RestrictionLoader<PLAYER, L, R extends Restriction<PLAYER, L>, H extends RestrictionHelper<PLAYER, L, R>, PLUGIN> {
 
-  /**
-   * Used to log whether a check fails or passes, and why.
-   */
-  protected final Logger logger;
-  /**
-   * The plugins to check whether a certain {@code Restriction} from
-   * {@link #possibleRestrictions} should be registered.
-   */
-  protected final List<PLUGIN> plugins;
-  /**
-   * The {@code Restriction}s to maybe be registered.
-   */
-  protected final List<Class<? extends R>> possibleRestrictions;
+	/**
+	 * Used to log whether a check fails or passes, and why.
+	 */
+	protected final Logger logger;
+	/**
+	 * The plugins to check whether a certain {@code Restriction} from
+	 * {@link #possibleRestrictions} should be registered.
+	 */
+	protected final List<PLUGIN> plugins;
+	/**
+	 * The {@code Restriction}s to maybe be registered.
+	 */
+	protected final List<Class<? extends R>> possibleRestrictions;
 
-  /**
-   * @param logger               the {@code Logger} used to log whether a check fails or
-   *                             passes, and why
-   * @param plugins              the plugins to check
-   * @param possibleRestrictions the {@code Restriction}s to maybe be registered
-   */
-  public RestrictionLoader(
-      final Logger logger,
-      final List<PLUGIN> plugins,
-      final List<Class<? extends R>> possibleRestrictions
-  ) {
-    this.logger = logger;
-    this.plugins = plugins;
-    this.possibleRestrictions = possibleRestrictions;
-  }
+	/**
+	 * @param logger               the {@code Logger} used to log whether a check fails or
+	 *                             passes, and why
+	 * @param plugins              the plugins to check
+	 * @param possibleRestrictions the {@code Restriction}s to maybe be registered
+	 */
+	public RestrictionLoader(
+			final Logger logger,
+			final List<PLUGIN> plugins,
+			final List<Class<? extends R>> possibleRestrictions
+	) {
+		this.logger = logger;
+		this.plugins = plugins;
+		this.possibleRestrictions = possibleRestrictions;
+	}
 
-  /**
-   * For each plugin in {@link #plugins}, checks whether any of the
-   * {@link #possibleRestrictions} were made for that specific version of
-   * that specific plugin and, if so, constructs the {@code Restriction} and
-   * registers it into {@code RestrictionHelper}.
-   *
-   * @param restrictionHelper the {@code RestrictionHelper} instance
-   */
-  public abstract void load(H restrictionHelper);
+	/**
+	 * For each plugin in {@link #plugins}, checks whether any of the
+	 * {@link #possibleRestrictions} were made for that specific version of
+	 * that specific plugin and, if so, constructs the {@code Restriction} and
+	 * registers it into {@code RestrictionHelper}.
+	 *
+	 * @param restrictionHelper the {@code RestrictionHelper} instance
+	 */
+	public abstract void load(H restrictionHelper);
 
 }

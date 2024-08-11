@@ -11,12 +11,12 @@ import org.slf4j.Logger;
  */
 public abstract class SpigotRestriction extends Restriction<Player, Location> {
 
-  /**
-   * @param logger the logger used to log whether a check fails or passes,
-   *               and why
-   */
-  public SpigotRestriction(final Logger logger) {
-    super(logger);
-  }
+	/**
+	 * @param logger the logger used to log whether a check fails or passes,
+	 *               and why
+	 */
+	public SpigotRestriction(final Logger logger) {
+		super(logger);
+	}
 
 }
